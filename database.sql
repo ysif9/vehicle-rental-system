@@ -1,5 +1,4 @@
-﻿-- CUSTOMER
-CREATE TABLE Customer
+﻿CREATE TABLE Customer
 (
     CustomerID             INT PRIMARY KEY,
     Customer_Name          VARCHAR(100),
@@ -11,8 +10,8 @@ CREATE TABLE Customer
     Password               VARCHAR(100),
     License_Number         VARCHAR(50),
     License_Expiry_Date    DATE,
-    License_Personal_Photo varchar(max)
-    );
+    License_Personal_Photo TEXT
+);
 
 -- RENTAL
 CREATE TABLE Rental
@@ -63,7 +62,7 @@ CREATE TABLE Garage
 -- VEHICLE
 CREATE TABLE Vehicle
 (
-    CarID               INT PRIMARY KEY,
+    CarID               INT IDENTITY(1,1) PRIMARY KEY,
     Brand               VARCHAR(50),
     Type                VARCHAR(50),
     Model_Name          VARCHAR(100),
@@ -110,6 +109,20 @@ CREATE TABLE Employee
     Enrollment_Date DATE
 );
 
+-- REVIEWS
+CREATE TABLE Reviews
+(
+    ReviewID      INT PRIMARY KEY,
+    RentalID      INT,
+    Customer_Name VARCHAR(100),
+    Feedback      TEXT,
+    Rating        INT,
+    Checked_By    INT,
+    Check_Report  TEXT,
+    FOREIGN KEY (RentalID) REFERENCES Rental (RentalID),
+    FOREIGN KEY (Checked_By) REFERENCES Employee (EmployeeID)
+);
+
 -- EMPLOYEE_GARAGE (N:M)
 CREATE TABLE Employee_Works_For_Garage
 (
@@ -118,18 +131,4 @@ CREATE TABLE Employee_Works_For_Garage
     PRIMARY KEY (EmployeeID, GarageID),
     FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
     FOREIGN KEY (GarageID) REFERENCES Garage (GarageID)
-);
-
--- REVIEWS
-CREATE TABLE Reviews
-(
-    ReviewID      INT PRIMARY KEY,
-    RentalID      INT,
-    Customer_Name VARCHAR(100),
-    Feedback      varchar(max),
-    Rating        INT,
-    Checked_By    INT,
-    Check_Report  varchar(max),
-    FOREIGN KEY (RentalID) REFERENCES Rental (RentalID),
-    FOREIGN KEY (Checked_By) REFERENCES Employee (EmployeeID)
 );

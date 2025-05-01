@@ -19,7 +19,6 @@ namespace VehicleRentalSystem
         // INSERT vehicle
         private void InsertVehicle()
         {
-
             if (!string.IsNullOrWhiteSpace(txtCarID.Text))
             {
                 MessageBox.Show("You cannot enter CarID manually. It is auto-generated.");
@@ -33,11 +32,13 @@ namespace VehicleRentalSystem
                 MessageBox.Show("Please enter valid numeric and date values.");
                 return;
             }
+
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    string query = @"INSERT INTO Vehicle (Brand, Model_Name, Model_Year, Type, Color, Number_of_Seats, License_Expiry_Date, License_Number, GarageID, Availability_Status)
+                    string query =
+                        @"INSERT INTO Vehicle (Brand, Model_Name, Model_Year, Type, Color, Number_of_Seats, License_Expiry_Date, License_Number, GarageID, Availability_Status)
                          VALUES (@Brand, @Model_Name, @Model_Year, @Type, @Color, @Number_of_Seats, @License_Expiry_Date, @License_Number, @GarageID, @Availability_Status)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -70,7 +71,6 @@ namespace VehicleRentalSystem
         // UPDATE vehicle
         private void UpdateVehicle()
         {
-
             if (!int.TryParse(txtCarID.Text, out int carId) ||
                 !int.TryParse(txtModelYear.Text, out int modelYear) ||
                 !int.TryParse(txtNumberOfSeats.Text, out int seats) ||
@@ -79,6 +79,7 @@ namespace VehicleRentalSystem
                 MessageBox.Show("Please enter valid numeric and date values.");
                 return;
             }
+
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -139,6 +140,7 @@ namespace VehicleRentalSystem
                 MessageBox.Show("Please enter valid numeric and date values.");
                 return;
             }
+
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -163,15 +165,16 @@ namespace VehicleRentalSystem
         // LOAD vehicles into DataGridView
         private void LoadVehicles()
         {
-            try { 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                string query = "SELECT * FROM Vehicle";
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-            }
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM Vehicle";
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
             }
             catch (Exception ex)
             {
@@ -203,35 +206,37 @@ namespace VehicleRentalSystem
                 MessageBox.Show("Please enter valid numeric and date values.");
                 return;
             }
-            try { 
-            using (SqlConnection con = new SqlConnection(connectionString))
+
+            try
             {
-                string query = "SELECT * FROM Vehicle WHERE CarID = @CarID";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@CarID", carId);
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    txtBrand.Text = reader["Brand"].ToString();
-                    txtModelName.Text = reader["Model_Name"].ToString();
-                    txtModelYear.Text = reader["Model_Year"].ToString();
-                    txtType.Text = reader["Type"].ToString();
-                    txtColor.Text = reader["Color"].ToString();
-                    txtNumberOfSeats.Text = reader["Number_of_Seats"].ToString();
-                    dtpLicenseExpiry.Text = reader["License_Expiry_Date"].ToString();
-                    txtLicenseNumber.Text = reader["License_Number"].ToString();
-                    txtGarageID.Text = reader["GarageID"].ToString();
-                    txtStatus.Text = reader["Availability_Status"].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Vehicle not found.");
-                }
+                    string query = "SELECT * FROM Vehicle WHERE CarID = @CarID";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@CarID", carId);
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                con.Close();
-            }
+                    if (reader.Read())
+                    {
+                        txtBrand.Text = reader["Brand"].ToString();
+                        txtModelName.Text = reader["Model_Name"].ToString();
+                        txtModelYear.Text = reader["Model_Year"].ToString();
+                        txtType.Text = reader["Type"].ToString();
+                        txtColor.Text = reader["Color"].ToString();
+                        txtNumberOfSeats.Text = reader["Number_of_Seats"].ToString();
+                        dtpLicenseExpiry.Text = reader["License_Expiry_Date"].ToString();
+                        txtLicenseNumber.Text = reader["License_Number"].ToString();
+                        txtGarageID.Text = reader["GarageID"].ToString();
+                        txtStatus.Text = reader["Availability_Status"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vehicle not found.");
+                    }
+
+                    con.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -242,7 +247,6 @@ namespace VehicleRentalSystem
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            
             InsertVehicle();
         }
 
@@ -258,7 +262,6 @@ namespace VehicleRentalSystem
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
