@@ -48,19 +48,22 @@ namespace VehicleRentalSystem
             {
                 using (var con = new SqlConnection(conn.ConnectionString))
                 {
-                    const string query =
-                        @"INSERT INTO Rental (Start_Date, End_Date, Rental_Status, CustomerID)
-                             VALUES (@StartDate, @EndDate, @Status, @CustomerID)";
-                    var cmd = new SqlCommand(query, con);
+                    var cmd = new SqlCommand("InsertRental", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
                     cmd.Parameters.AddWithValue("@StartDate", start_datepicker.Value);
                     cmd.Parameters.AddWithValue("@EndDate", end_datepicker.Value);
                     cmd.Parameters.AddWithValue("@Status", status_box.SelectedItem?.ToString() ?? "Pending");
                     cmd.Parameters.AddWithValue("@CustomerID", int.Parse(customer_id_textbox.Text));
 
                     con.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show(@"Rental inserted successfully.");
+                    int newRentalId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    MessageBox.Show($"Rental inserted successfully. RentalID: {newRentalId}");
                 }
+
                 LoadTable("Rental");
             }
             catch (Exception ex)
@@ -68,6 +71,7 @@ namespace VehicleRentalSystem
                 MessageBox.Show(@"Error: " + ex.Message);
             }
         }
+
 
         private void search_btn_Click(object sender, EventArgs e)
         {
@@ -80,14 +84,11 @@ namespace VehicleRentalSystem
             {
                 using (SqlConnection con = new SqlConnection(conn.ConnectionString))
                 {
-                    string query = @"UPDATE Rental 
-                             SET Start_Date = @StartDate, 
-                                 End_Date = @EndDate, 
-                                 Rental_Status = @Status, 
-                                 CustomerID = @CustomerID 
-                             WHERE RentalID = @RentalID";
+                    SqlCommand cmd = new SqlCommand("UpdateRental", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
 
-                    SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@RentalID", int.Parse(rental_id_textbox.Text));
                     cmd.Parameters.AddWithValue("@StartDate", start_datepicker.Value);
                     cmd.Parameters.AddWithValue("@EndDate", end_datepicker.Value);
@@ -107,14 +108,18 @@ namespace VehicleRentalSystem
             }
         }
 
+
         private void delete_btn_Click(object sender, EventArgs e)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(conn.ConnectionString))
                 {
-                    string query = "DELETE FROM Rental WHERE RentalID = @RentalID";
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlCommand cmd = new SqlCommand("DeleteRental", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
                     cmd.Parameters.AddWithValue("@RentalID", int.Parse(rental_id_textbox.Text));
 
                     con.Open();
