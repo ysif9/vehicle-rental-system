@@ -1,0 +1,61 @@
+
+# Build results
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Rider-specific
+.idea/
+*.sln.iml
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS Code settings (if ever used)
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+project.assets.json
+
+# SQL and database
+*.mdf
+*.ldf
+*.bak
+*.sql~
+
+# OS files
+Thumbs.db
+ehthumbs.db
+.DS_Store
+*.swp
+*.tmp
+~$*
+
+# Application config
+*.config.user
+
+# Rider logs and metadata
+*.iws
+*.ipr
+
+# Others
+*.vs/
+_ReSharper*/
+*.resharper
+*.tss
+*.DotSettings.user
