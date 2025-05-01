@@ -81,6 +81,9 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="database.sql" />
+      <Content Include="RentalProcedures\DeleteRental.sql" />
+      <Content Include="RentalProcedures\InsertRental.sql" />
+      <Content Include="RentalProcedures\UpdateRental.sql" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

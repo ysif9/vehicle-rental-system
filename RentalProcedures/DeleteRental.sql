@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE DeleteRental
+    @RentalID INT
+AS
+BEGIN
+DELETE FROM Rental WHERE RentalID = @RentalID;
+END;
