@@ -30,14 +30,16 @@ namespace VehicleRentalSystem
         private void InitializeComponent()
         {
             this.rental_details = new System.Windows.Forms.GroupBox();
+            this.rental_id_textbox = new System.Windows.Forms.TextBox();
+            this.rental_id = new System.Windows.Forms.Label();
             this.status_box = new System.Windows.Forms.ComboBox();
             this.end_datepicker = new System.Windows.Forms.DateTimePicker();
             this.start_datepicker = new System.Windows.Forms.DateTimePicker();
-            this.id_textbox = new System.Windows.Forms.TextBox();
+            this.customer_id_textbox = new System.Windows.Forms.TextBox();
             this.end_date = new System.Windows.Forms.Label();
             this.rental_status = new System.Windows.Forms.Label();
             this.start_date = new System.Windows.Forms.Label();
-            this.rental_id = new System.Windows.Forms.Label();
+            this.customer_id = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.search_tb = new System.Windows.Forms.TextBox();
             this.search_btn = new System.Windows.Forms.Button();
@@ -50,20 +52,37 @@ namespace VehicleRentalSystem
             // 
             // rental_details
             // 
+            this.rental_details.Controls.Add(this.rental_id_textbox);
+            this.rental_details.Controls.Add(this.rental_id);
             this.rental_details.Controls.Add(this.status_box);
             this.rental_details.Controls.Add(this.end_datepicker);
             this.rental_details.Controls.Add(this.start_datepicker);
-            this.rental_details.Controls.Add(this.id_textbox);
+            this.rental_details.Controls.Add(this.customer_id_textbox);
             this.rental_details.Controls.Add(this.end_date);
             this.rental_details.Controls.Add(this.rental_status);
             this.rental_details.Controls.Add(this.start_date);
-            this.rental_details.Controls.Add(this.rental_id);
+            this.rental_details.Controls.Add(this.customer_id);
             this.rental_details.Location = new System.Drawing.Point(12, 12);
             this.rental_details.Name = "rental_details";
             this.rental_details.Size = new System.Drawing.Size(683, 184);
             this.rental_details.TabIndex = 0;
             this.rental_details.TabStop = false;
             this.rental_details.Text = "Rental Details";
+            // 
+            // rental_id_textbox
+            // 
+            this.rental_id_textbox.Location = new System.Drawing.Point(156, 19);
+            this.rental_id_textbox.Name = "rental_id_textbox";
+            this.rental_id_textbox.Size = new System.Drawing.Size(167, 20);
+            this.rental_id_textbox.TabIndex = 9;
+            // 
+            // rental_id
+            // 
+            this.rental_id.Location = new System.Drawing.Point(26, 22);
+            this.rental_id.Name = "rental_id";
+            this.rental_id.Size = new System.Drawing.Size(97, 27);
+            this.rental_id.TabIndex = 8;
+            this.rental_id.Text = "Rental ID";
             // 
             // status_box
             // 
@@ -73,7 +92,6 @@ namespace VehicleRentalSystem
             this.status_box.Name = "status_box";
             this.status_box.Size = new System.Drawing.Size(167, 21);
             this.status_box.TabIndex = 7;
-            this.status_box.SelectedIndexChanged += new System.EventHandler(this.status_box_SelectedIndexChanged);
             // 
             // end_datepicker
             // 
@@ -93,12 +111,12 @@ namespace VehicleRentalSystem
             this.start_datepicker.Size = new System.Drawing.Size(167, 20);
             this.start_datepicker.TabIndex = 5;
             // 
-            // id_textbox
+            // customer_id_textbox
             // 
-            this.id_textbox.Location = new System.Drawing.Point(156, 19);
-            this.id_textbox.Name = "id_textbox";
-            this.id_textbox.Size = new System.Drawing.Size(167, 20);
-            this.id_textbox.TabIndex = 4;
+            this.customer_id_textbox.Location = new System.Drawing.Point(486, 19);
+            this.customer_id_textbox.Name = "customer_id_textbox";
+            this.customer_id_textbox.Size = new System.Drawing.Size(167, 20);
+            this.customer_id_textbox.TabIndex = 4;
             // 
             // end_date
             // 
@@ -124,14 +142,13 @@ namespace VehicleRentalSystem
             this.start_date.TabIndex = 1;
             this.start_date.Text = "Start Date";
             // 
-            // rental_id
+            // customer_id
             // 
-            this.rental_id.Location = new System.Drawing.Point(26, 22);
-            this.rental_id.Name = "rental_id";
-            this.rental_id.Size = new System.Drawing.Size(97, 27);
-            this.rental_id.TabIndex = 0;
-            this.rental_id.Text = "Customer ID";
-            this.rental_id.Click += new System.EventHandler(this.rental_id_Click);
+            this.customer_id.Location = new System.Drawing.Point(367, 22);
+            this.customer_id.Name = "customer_id";
+            this.customer_id.Size = new System.Drawing.Size(97, 27);
+            this.customer_id.TabIndex = 0;
+            this.customer_id.Text = "Customer ID";
             // 
             // dataGridView1
             // 
@@ -156,6 +173,7 @@ namespace VehicleRentalSystem
             this.search_btn.TabIndex = 3;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // insert_btn
             // 
@@ -175,6 +193,7 @@ namespace VehicleRentalSystem
             this.update_btn.TabIndex = 5;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // delete_btn
             // 
@@ -184,8 +203,9 @@ namespace VehicleRentalSystem
             this.delete_btn.TabIndex = 6;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
-            // Form1
+            // RentalsForm
             // 
             this.ClientSize = new System.Drawing.Size(701, 452);
             this.Controls.Add(this.delete_btn);
@@ -195,7 +215,7 @@ namespace VehicleRentalSystem
             this.Controls.Add(this.search_tb);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rental_details);
-            this.Name = "Form1";
+            this.Name = "RentalsForm";
             this.rental_details.ResumeLayout(false);
             this.rental_details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -203,6 +223,7 @@ namespace VehicleRentalSystem
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.TextBox rental_id_textbox;
         private System.Windows.Forms.Label rental_id;
 
         private System.Windows.Forms.Button search_btn;
@@ -213,7 +234,9 @@ namespace VehicleRentalSystem
 
         private System.Windows.Forms.TextBox search_tb;
 
-        private System.Windows.Forms.TextBox id_textbox;
+        private System.Windows.Forms.TextBox customer_id_textbox;
+        private System.Windows.Forms.Label customer_id;
+        
         private System.Windows.Forms.DateTimePicker start_datepicker;
         private System.Windows.Forms.DateTimePicker end_datepicker;
         private System.Windows.Forms.ComboBox status_box;
