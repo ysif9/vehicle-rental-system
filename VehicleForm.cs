@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Vehicle_Rental_System
+namespace VehicleRentalSystem
 {
     public partial class VehicleForm : Form
     {
