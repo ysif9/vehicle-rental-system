@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     partial class PaymentForm
     {
@@ -12,7 +12,7 @@ namespace VehicleRentalSystem
         private TextBox txtTotalPrice, txtPaymentStatus, txtCustomerID, txtRentalID, txtSearch;
         private DateTimePicker dtpPaymentDate;
         private Button btnSearch, btnInsert, btnUpdate, btnDelete;
-        private DataGridView dgvPayments;
+        private System.Windows.Forms.DataGridView dgvPayments;
 
         protected override void Dispose(bool disposing)
         {
@@ -23,121 +23,197 @@ namespace VehicleRentalSystem
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            groupBoxDetails = new GroupBox();
-            lblTotalPrice = new Label();
-            txtTotalPrice = new TextBox();
-            lblPaymentStatus = new Label();
-            txtPaymentStatus = new TextBox();
-            lblPaymentDate = new Label();
-            dtpPaymentDate = new DateTimePicker();
-            lblCustomerID = new Label();
-            txtCustomerID = new TextBox();
-            lblRentalID = new Label();
-            txtRentalID = new TextBox();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
-            btnInsert = new Button();
-            btnUpdate = new Button();
-            btnDelete = new Button();
-            dgvPayments = new DataGridView();
-
-            // PaymentForm 
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(800, 450);
-            this.Text = "Payment";
-
+            this.groupBoxDetails = new System.Windows.Forms.GroupBox();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.lblPaymentStatus = new System.Windows.Forms.Label();
+            this.txtPaymentStatus = new System.Windows.Forms.TextBox();
+            this.lblPaymentDate = new System.Windows.Forms.Label();
+            this.dtpPaymentDate = new System.Windows.Forms.DateTimePicker();
+            this.lblCustomerID = new System.Windows.Forms.Label();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.lblRentalID = new System.Windows.Forms.Label();
+            this.txtRentalID = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.dgvPayments = new System.Windows.Forms.DataGridView();
+            this.groupBoxDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).BeginInit();
+            this.SuspendLayout();
+            // 
             // groupBoxDetails
-            groupBoxDetails.Text = "Payment Details";
-            groupBoxDetails.Location = new Point(10, 10);
-            groupBoxDetails.Size = new Size(770, 125);
-
+            // 
+            this.groupBoxDetails.Controls.Add(this.lblTotalPrice);
+            this.groupBoxDetails.Controls.Add(this.txtTotalPrice);
+            this.groupBoxDetails.Controls.Add(this.lblPaymentStatus);
+            this.groupBoxDetails.Controls.Add(this.txtPaymentStatus);
+            this.groupBoxDetails.Controls.Add(this.lblPaymentDate);
+            this.groupBoxDetails.Controls.Add(this.dtpPaymentDate);
+            this.groupBoxDetails.Controls.Add(this.lblCustomerID);
+            this.groupBoxDetails.Controls.Add(this.txtCustomerID);
+            this.groupBoxDetails.Controls.Add(this.lblRentalID);
+            this.groupBoxDetails.Controls.Add(this.txtRentalID);
+            this.groupBoxDetails.Location = new System.Drawing.Point(10, 10);
+            this.groupBoxDetails.Name = "groupBoxDetails";
+            this.groupBoxDetails.Size = new System.Drawing.Size(770, 125);
+            this.groupBoxDetails.TabIndex = 0;
+            this.groupBoxDetails.TabStop = false;
+            this.groupBoxDetails.Text = "Payment Details";
+            // 
             // lblTotalPrice
-            lblTotalPrice.Text = "Total Price";
-            lblTotalPrice.Location = new Point(20, 25);
-            lblTotalPrice.Size = new Size(120, 20);
-
+            // 
+            this.lblTotalPrice.Location = new System.Drawing.Point(20, 25);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(120, 20);
+            this.lblTotalPrice.TabIndex = 0;
+            this.lblTotalPrice.Text = "Total Price";
+            // 
             // txtTotalPrice
-            txtTotalPrice.Location = new Point(150, 25);
-            txtTotalPrice.Size = new Size(150, 20);
-
+            // 
+            this.txtTotalPrice.Location = new System.Drawing.Point(150, 25);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(150, 20);
+            this.txtTotalPrice.TabIndex = 1;
+            // 
             // lblPaymentStatus
-            lblPaymentStatus.Text = "Payment Status";
-            lblPaymentStatus.Location = new Point(400, 25);
-            lblPaymentStatus.Size = new Size(120, 20);
-
+            // 
+            this.lblPaymentStatus.Location = new System.Drawing.Point(400, 25);
+            this.lblPaymentStatus.Name = "lblPaymentStatus";
+            this.lblPaymentStatus.Size = new System.Drawing.Size(120, 20);
+            this.lblPaymentStatus.TabIndex = 2;
+            this.lblPaymentStatus.Text = "Payment Status";
+            // 
             // txtPaymentStatus
-            txtPaymentStatus.Location = new Point(530, 25);
-            txtPaymentStatus.Size = new Size(150, 20);
-
+            // 
+            this.txtPaymentStatus.Location = new System.Drawing.Point(530, 25);
+            this.txtPaymentStatus.Name = "txtPaymentStatus";
+            this.txtPaymentStatus.Size = new System.Drawing.Size(150, 20);
+            this.txtPaymentStatus.TabIndex = 3;
+            // 
             // lblPaymentDate
-            lblPaymentDate.Text = "Payment Date";
-            lblPaymentDate.Location = new Point(20, 65);
-            lblPaymentDate.Size = new Size(120, 20);
-
+            // 
+            this.lblPaymentDate.Location = new System.Drawing.Point(20, 65);
+            this.lblPaymentDate.Name = "lblPaymentDate";
+            this.lblPaymentDate.Size = new System.Drawing.Size(120, 20);
+            this.lblPaymentDate.TabIndex = 4;
+            this.lblPaymentDate.Text = "Payment Date";
+            // 
             // dtpPaymentDate
-            dtpPaymentDate.Format = DateTimePickerFormat.Short;
-            dtpPaymentDate.Location = new Point(150, 65);
-            dtpPaymentDate.Size = new Size(150, 20);
-
+            // 
+            this.dtpPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPaymentDate.Location = new System.Drawing.Point(150, 65);
+            this.dtpPaymentDate.Name = "dtpPaymentDate";
+            this.dtpPaymentDate.Size = new System.Drawing.Size(150, 20);
+            this.dtpPaymentDate.TabIndex = 5;
+            // 
             // lblCustomerID
-            lblCustomerID.Text = "Customer ID";
-            lblCustomerID.Location = new Point(400, 65);
-            lblCustomerID.Size = new Size(120, 20);
-
+            // 
+            this.lblCustomerID.Location = new System.Drawing.Point(400, 65);
+            this.lblCustomerID.Name = "lblCustomerID";
+            this.lblCustomerID.Size = new System.Drawing.Size(120, 20);
+            this.lblCustomerID.TabIndex = 6;
+            this.lblCustomerID.Text = "Customer ID";
+            // 
             // txtCustomerID
-            txtCustomerID.Location = new Point(530, 65);
-            txtCustomerID.Size = new Size(150, 20);
-
+            // 
+            this.txtCustomerID.Location = new System.Drawing.Point(530, 65);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(150, 20);
+            this.txtCustomerID.TabIndex = 7;
+            // 
             // lblRentalID
-            lblRentalID.Text = "Rental ID";
-            lblRentalID.Location = new Point(20, 100);
-            lblRentalID.Size = new Size(120, 20);
-
+            // 
+            this.lblRentalID.Location = new System.Drawing.Point(20, 100);
+            this.lblRentalID.Name = "lblRentalID";
+            this.lblRentalID.Size = new System.Drawing.Size(120, 20);
+            this.lblRentalID.TabIndex = 8;
+            this.lblRentalID.Text = "Rental ID";
+            // 
             // txtRentalID
-            txtRentalID.Location = new Point(150, 100);
-            txtRentalID.Size = new Size(150, 20);
-
-            // Add controls to groupBox
-            groupBoxDetails.Controls.Add(lblTotalPrice);
-            groupBoxDetails.Controls.Add(txtTotalPrice);
-            groupBoxDetails.Controls.Add(lblPaymentStatus);
-            groupBoxDetails.Controls.Add(txtPaymentStatus);
-            groupBoxDetails.Controls.Add(lblPaymentDate);
-            groupBoxDetails.Controls.Add(dtpPaymentDate);
-            groupBoxDetails.Controls.Add(lblCustomerID);
-            groupBoxDetails.Controls.Add(txtCustomerID);
-            groupBoxDetails.Controls.Add(lblRentalID);
-            groupBoxDetails.Controls.Add(txtRentalID);
-
-            // Search TextBox
-            txtSearch.Location = new Point(10, 150);
-            txtSearch.Size = new Size(200, 20);
-
-            // Buttons
-            btnSearch.Text = "Search";
-            btnSearch.Location = new Point(220, 150);
-            btnInsert.Text = "Insert";
-            btnInsert.Location = new Point(320, 150);
-            btnUpdate.Text = "Update";
-            btnUpdate.Location = new Point(420, 150);
-            btnDelete.Text = "Delete";
-            btnDelete.Location = new Point(520, 150);
-
-            // DataGridView
-            dgvPayments.Location = new Point(10, 190);
-            dgvPayments.Size = new Size(770, 230);
-
-            // Add controls to form
-            this.Controls.Add(groupBoxDetails);
-            this.Controls.Add(txtSearch);
-            this.Controls.Add(btnSearch);
-            this.Controls.Add(btnInsert);
-            this.Controls.Add(btnUpdate);
-            this.Controls.Add(btnDelete);
-            this.Controls.Add(dgvPayments);
+            // 
+            this.txtRentalID.Location = new System.Drawing.Point(150, 100);
+            this.txtRentalID.Name = "txtRentalID";
+            this.txtRentalID.Size = new System.Drawing.Size(150, 20);
+            this.txtRentalID.TabIndex = 9;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(10, 150);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(200, 20);
+            this.txtSearch.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(220, 150);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Location = new System.Drawing.Point(320, 150);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.TabIndex = 3;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(420, 150);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(520, 150);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // dgvPayments
+            // 
+            this.dgvPayments.Location = new System.Drawing.Point(10, 190);
+            this.dgvPayments.Name = "dgvPayments";
+            this.dgvPayments.Size = new System.Drawing.Size(770, 230);
+            this.dgvPayments.TabIndex = 6;
+            this.dgvPayments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayments_CellContentClick);
+            // 
+            // PaymentForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBoxDetails);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.dgvPayments);
+            this.Name = "PaymentForm";
+            this.Text = "Payment";
+            this.groupBoxDetails.ResumeLayout(false);
+            this.groupBoxDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
     }
 }

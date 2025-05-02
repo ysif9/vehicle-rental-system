@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     public partial class ReviewForm : Form
     {
@@ -13,7 +13,7 @@ namespace VehicleRentalSystem
             Load += ReviewsForm_Load;
         }
 
-        SqlConnection conn = new SqlConnection(@"Server=MSI,1433;Initial Catalog=DatabaseProject;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
 
         private void ReviewsForm_Load(object sender, EventArgs e)
         {

@@ -2,13 +2,14 @@
 // law 3ayez tft7 el EmployeeForm awel haga, bas 3adelha le Application.Run(new EmployeeForm());
 // kol haga fel navigation mawgooda fel Program.cs, shof el comments hnak :)
 //
+
 using System;
-using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     public partial class MaintenanceForm : Form
     {
@@ -16,7 +17,7 @@ namespace VehicleRentalSystem
         // (fields are now in the designer)
         // el connection string, 3ashan n3raf nconnect el db
         
-        SqlConnection connectionString = new SqlConnection(@"Server=MSI,1433;Initial Catalog=DatabaseProject;Integrated Security=True");
+        SqlConnection connectionString = new SqlConnection(@"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
         public MaintenanceForm()
         {
             // hena bna3ml setup lel UI mn el designer

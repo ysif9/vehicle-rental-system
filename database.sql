@@ -82,7 +82,6 @@ CREATE TABLE Vehicle_Offered_For_Rental
 (
     RentalID    INT,
     CarID       INT,
-    Offered_For VARCHAR(50),
     Daily_Price DECIMAL(10, 2),
     PRIMARY KEY (RentalID, CarID),
     FOREIGN KEY (RentalID) REFERENCES Rental (RentalID),

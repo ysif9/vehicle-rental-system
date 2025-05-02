@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     public partial class CustomerForm : Form
     {
@@ -13,7 +13,7 @@ namespace VehicleRentalSystem
             Load += CustomerForm_Load;
         }
 
-        SqlConnection conn = new SqlConnection(@"Server=MSI,1433;Initial Catalog=DatabaseProject;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace VehicleRentalSystem
                     SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    customerDataGridView.DataSource = dt;
+                    dataGridView1.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -39,7 +39,12 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void insert_btn_Click(object sender, EventArgs e)
+        private void update_btn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
         {
             try
             {
@@ -50,16 +55,16 @@ namespace VehicleRentalSystem
                         CommandType = CommandType.StoredProcedure
                     };
 
-                    cmd.Parameters.AddWithValue("@Customer_Name", customer_name_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Address", address_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Date_of_Birth", dob_picker.Value);
-                    cmd.Parameters.AddWithValue("@Age", int.Parse(age_textbox.Text));
-                    cmd.Parameters.AddWithValue("@Email", email_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Phone_Number", phone_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Password", password_textbox.Text);
-                    cmd.Parameters.AddWithValue("@License_Number", license_number_textbox.Text);
-                    cmd.Parameters.AddWithValue("@License_Expiry_Date", license_expiry_picker.Value);
-                    cmd.Parameters.AddWithValue("@License_Personal_Photo", license_photo_textbox.Text);
+                    cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
+                    cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@Date_of_Birth", dtpBirth.Value);
+                    cmd.Parameters.AddWithValue("@Age", int.Parse(txtAge.Text));
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@Phone_Number", txtPhoneNumber.Text);
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@License_Number", txtLicenseNumber.Text);
+                    cmd.Parameters.AddWithValue("@License_Expiry_Date", dtpExpiry.Value);
+                    cmd.Parameters.AddWithValue("@License_Personal_Photo", txtLicensePhoto.Text);
 
                     con.Open();
                     int newCustomerId = Convert.ToInt32(cmd.ExecuteScalar());
@@ -75,7 +80,7 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void update_btn_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -86,17 +91,17 @@ namespace VehicleRentalSystem
                         CommandType = CommandType.StoredProcedure
                     };
 
-                    cmd.Parameters.AddWithValue("@CustomerID", int.Parse(customer_id_textbox.Text));
-                    cmd.Parameters.AddWithValue("@Customer_Name", customer_name_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Address", address_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Date_of_Birth", dob_picker.Value);
-                    cmd.Parameters.AddWithValue("@Age", int.Parse(age_textbox.Text));
-                    cmd.Parameters.AddWithValue("@Email", email_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Phone_Number", phone_textbox.Text);
-                    cmd.Parameters.AddWithValue("@Password", password_textbox.Text);
-                    cmd.Parameters.AddWithValue("@License_Number", license_number_textbox.Text);
-                    cmd.Parameters.AddWithValue("@License_Expiry_Date", license_expiry_picker.Value);
-                    cmd.Parameters.AddWithValue("@License_Personal_Photo", license_photo_textbox.Text);
+                    cmd.Parameters.AddWithValue("@CustomerID", int.Parse(txtCustomerID.Text));
+                    cmd.Parameters.AddWithValue("@Customer_Name", txtCustomerName.Text);
+                    cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@Date_of_Birth", dtpBirth.Value);
+                    cmd.Parameters.AddWithValue("@Age", int.Parse(txtAge.Text));
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@Phone_Number", txtPhoneNumber.Text);
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("@License_Number", txtLicenseNumber.Text);
+                    cmd.Parameters.AddWithValue("@License_Expiry_Date", dtpExpiry.Value);
+                    cmd.Parameters.AddWithValue("@License_Personal_Photo", txtLicensePhoto.Text);
 
                     con.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -111,7 +116,7 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void delete_btn_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -122,7 +127,7 @@ namespace VehicleRentalSystem
                         CommandType = CommandType.StoredProcedure
                     };
 
-                    cmd.Parameters.AddWithValue("@CustomerID", int.Parse(customer_id_textbox.Text));
+                    cmd.Parameters.AddWithValue("@CustomerID", int.Parse(txtCustomerID.Text));
 
                     con.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -135,11 +140,6 @@ namespace VehicleRentalSystem
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
-
-        private void search_btn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

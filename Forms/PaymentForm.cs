@@ -3,12 +3,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     public partial class PaymentForm : Form
     {
         // Modify the connection string as per your SQL Server setup
-        SqlConnection conn = new SqlConnection(@"Server=MSI,1433;Initial Catalog=VehicleRentalDB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
 
         public PaymentForm()
         {
@@ -35,7 +35,7 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnInsert_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -123,7 +123,7 @@ namespace VehicleRentalSystem
             }
         }
 
-        private void dgvPayments_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPayments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dgvPayments.CurrentRow != null)
             {

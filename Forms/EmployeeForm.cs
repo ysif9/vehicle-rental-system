@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     public partial class EmployeeForm : Form
     {
@@ -15,7 +15,7 @@ namespace VehicleRentalSystem
         // hena el controls beta3t el form, kol haga lelha textbox aw control
         // (fields are now in the designer)
         // el connection string, 3ashan n3raf nconnect el db
-        private string connectionString = @"Server=MSI,1433;Initial Catalog=DatabaseProject;Integrated Security=True";
+        private string connectionString = @"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True";
 
         public EmployeeForm()
         {

@@ -1,12 +1,10 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 // This is the auto-generated designer file for MaintenanceForm.
 // Normally, Visual Studio manages this file if you use the WinForms designer.
 // If you build your UI in code, you can leave this as a placeholder.
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     partial class MaintenanceForm
     {
