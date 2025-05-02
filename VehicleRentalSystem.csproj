@@ -46,57 +46,115 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="RentalsForm.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="RentalsForm.Designer.cs">
-            <DependentUpon>RentalsForm.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Program.cs"/>
-        <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="VehicleForm.cs" />
-        <Compile Include="VehicleForm.Designer.cs" />
-        <Compile Include="VehicleRentalForm.cs" />
-        <Compile Include="VehicleRentalForm.Designer.cs" />
-        <EmbeddedResource Include="Properties\Resources.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-            <SubType>Designer</SubType>
-        </EmbeddedResource>
-        <Compile Include="Properties\Resources.Designer.cs">
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Resources.resx</DependentUpon>
-        </Compile>
-        <EmbeddedResource Include="RentalsForm.resx">
-          <DependentUpon>RentalsForm.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="VehicleForm.resx" />
-        <EmbeddedResource Include="VehicleRentalForm.resx" />
-        <None Include="Properties\Settings.settings">
-            <Generator>SettingsSingleFileGenerator</Generator>
-            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-        </None>
-        <Compile Include="Properties\Settings.Designer.cs">
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Settings.settings</DependentUpon>
-            <DesignTimeSharedInput>True</DesignTimeSharedInput>
-        </Compile>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="App.config"/>
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include=".gitignore" />
-      <Content Include="database.sql" />
-      <Content Include="RentalProcedures\DeleteRental.sql" />
-      <Content Include="RentalProcedures\InsertRental.sql" />
-      <Content Include="RentalProcedures\UpdateRental.sql" />
-      <Content Include="VehicleProcedures\DeleteVehicle.sql" />
-      <Content Include="VehicleProcedures\InsertVehicle.sql" />
-      <Content Include="VehicleProcedures\UpdateVehicle.sql" />
-      <Content Include="VehicleRentalProcedures\DeleteVehicleRental.sql" />
-      <Content Include="VehicleRentalProcedures\InsertVehicleRental.sql" />
-      <Content Include="VehicleRentalProcedures\UpdateVehicleRental.sql" />
-    </ItemGroup>
+    <Compile Include="Forms\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MaintanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MaintanceForm.Designer.cs">
+      <DependentUpon>MaintanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReviewForm.Designer.cs">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VehicleMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VehicleMaintenance.Designer.cs">
+      <DependentUpon>VehicleMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentalsForm.cs" />
+    <Compile Include="RentalsForm.Designer.cs" />
+    <EmbeddedResource Include="Forms\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VehicleMaintenance.resx">
+      <DependentUpon>VehicleMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="database.sql" />
+    <Content Include="obj\Debug\VehicleRentalSystem.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\VehicleRentalSystem.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\VehicleRentalSystem.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\VehicleRentalSystem.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\VehicleRentalSystem.exe" />
+    <Content Include="obj\Debug\VehicleRentalSystem.pdb" />
+    <Content Include="obj\Debug\VehicleRentalSystem.Properties.Resources.resources" />
+    <Content Include="obj\Debug\VehicleRentalSystem.ReviewForm.resources" />
+    <Content Include="obj\Debug\VehicleRentalSystem.VehicleForm.resources" />
+    <Content Include="obj\Debug\VehicleRentalSystem.VehicleRentalForm.resources" />
+    <Content Include="Procedures\CustomerProcedures\DeleteCustomer.sql" />
+    <Content Include="Procedures\CustomerProcedures\InsertCustomer.sql" />
+    <Content Include="Procedures\CustomerProcedures\UpdateCustomer.sql" />
+    <Content Include="Procedures\EmployeeProcedures\DeleteEmployee.sql" />
+    <Content Include="Procedures\EmployeeProcedures\GetAllEmployees.sql" />
+    <Content Include="Procedures\EmployeeProcedures\InsertEmployee.sql" />
+    <Content Include="Procedures\EmployeeProcedures\UpdateEmployee.sql" />
+    <Content Include="Procedures\MaintenanceProcedures\DeleteVehicleNeedsMaintenance.sql" />
+    <Content Include="Procedures\MaintenanceProcedures\GetAllMaintenance.sql" />
+    <Content Include="Procedures\MaintenanceProcedures\InsertVehicleNeedsMaintenance.sql" />
+    <Content Include="Procedures\MaintenanceProcedures\UpdateVehicleNeedsMaintenance.sql" />
+    <Content Include="Procedures\paymentsProcedures\DeletePayment.sql" />
+    <Content Include="Procedures\paymentsProcedures\GetAllPayments.sql" />
+    <Content Include="Procedures\paymentsProcedures\InsertPayment.sql" />
+    <Content Include="Procedures\paymentsProcedures\UpdatePayment.sql" />
+    <Content Include="Procedures\ReviewProcedures\DeleteReview.sql" />
+    <Content Include="Procedures\ReviewProcedures\InsertReview.sql" />
+    <Content Include="Procedures\ReviewProcedures\UpdateReview.sql" />
+    <Content Include="Procedures\VehicleMaintananceProcedures\DeleteVehicleNeedsMaintenance.sql" />
+    <Content Include="Procedures\VehicleMaintananceProcedures\InsertVehicleNeedsMaintenance.sql" />
+    <Content Include="Procedures\VehicleMaintananceProcedures\UpdateVehicleNeedsMaintenance.sql" />
+    <Content Include="TestProcedures.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Procedures\" />
+  </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

@@ -1,0 +1,6 @@
+CREATE PROCEDURE DeleteReview
+    @ReviewID INT
+AS
+BEGIN
+DELETE FROM Reviews WHERE ReviewID = @ReviewID;
+END
