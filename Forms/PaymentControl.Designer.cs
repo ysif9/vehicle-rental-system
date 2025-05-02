@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    partial class PaymentForm
+    partial class PaymentControl
     {
         private IContainer components = null;
         private GroupBox groupBoxDetails;
@@ -195,7 +195,7 @@ namespace VehicleRentalSystem.Forms
             this.dgvPayments.TabIndex = 6;
             this.dgvPayments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayments_CellContentClick);
             // 
-            // PaymentForm
+            // PaymentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,7 +207,7 @@ namespace VehicleRentalSystem.Forms
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvPayments);
-            this.Name = "PaymentForm";
+            this.Name = "PaymentControl";
             this.Text = "Payment";
             this.groupBoxDetails.ResumeLayout(false);
             this.groupBoxDetails.PerformLayout();

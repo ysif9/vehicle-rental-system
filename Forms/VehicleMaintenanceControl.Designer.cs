@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    partial class VehicleMaintenance
+    partial class VehicleMaintenanceControl
     {
         /// <summary>
         /// Required designer variable.
@@ -136,7 +136,7 @@ namespace VehicleRentalSystem.Forms
             this.dataGridView1.Size = new System.Drawing.Size(776, 220);
             this.dataGridView1.TabIndex = 10;
             // 
-            // VehicleMaintenance
+            // VehicleMaintenanceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +151,7 @@ namespace VehicleRentalSystem.Forms
             this.Controls.Add(this.vehicleInsertButton);
             this.Controls.Add(this.vehicleUpdateButton);
             this.Controls.Add(this.vehicleDeleteButton);
-            this.Name = "VehicleMaintenance";
+            this.Name = "VehicleMaintenanceControl";
             this.Text = "Vehicle Maintenance";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

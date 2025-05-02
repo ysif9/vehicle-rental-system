@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    public partial class EmployeeForm : Form
+    public partial class EmployeeControl : UserControl
     {
-        // dah el Employee form, law 3ayez tbd2 b el form dah awel ma el app yft7, ro7 3ala Program.cs w khally Application.Run(new EmployeeForm());
-        // law 3ayez tft7 el MaintenanceForm awel haga, bas 3adelha le Application.Run(new MaintenanceForm());
+        // dah el Employee form, law 3ayez tbd2 b el form dah awel ma el app yft7, ro7 3ala Program.cs w khally Application.Run(new EmployeeControl());
+        // law 3ayez tft7 el MaintenanceControl awel haga, bas 3adelha le Application.Run(new MaintenanceControl());
         // kol haga fel navigation mawgooda fel Program.cs, shof el comments hnak :)
 
         // hena el controls beta3t el form, kol haga lelha textbox aw control
@@ -17,7 +17,7 @@ namespace VehicleRentalSystem.Forms
         // el connection string, 3ashan n3raf nconnect el db
         private string connectionString = @"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True";
 
-        public EmployeeForm()
+        public EmployeeControl()
         {
             // hena bna3ml setup lel UI mn el designer
             InitializeComponent();

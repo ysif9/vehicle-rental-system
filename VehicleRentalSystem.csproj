@@ -46,59 +46,68 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-    <Compile Include="Forms\CustomerForm.cs">
+    <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeForm.cs">
+    <Compile Include="Forms\CustomerControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeeForm.Designer.cs">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <Compile Include="Forms\CustomerControl.Designer.cs">
+      <DependentUpon>CustomerControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MaintanceForm.cs">
+    <Compile Include="Forms\EmployeeControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MaintanceForm.Designer.cs">
-      <DependentUpon>MaintanceForm.cs</DependentUpon>
+    <Compile Include="Forms\EmployeeControl.Designer.cs">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PaymentForm.cs">
+    <Compile Include="Forms\MaintenanceControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PaymentForm.Designer.cs">
-      <DependentUpon>PaymentForm.cs</DependentUpon>
+    <Compile Include="Forms\MaintenanceControl.Designer.cs">
+      <DependentUpon>MaintenanceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReviewForm.cs">
+    <Compile Include="Forms\PaymentControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReviewForm.Designer.cs">
-      <DependentUpon>ReviewForm.cs</DependentUpon>
+    <Compile Include="Forms\PaymentControl.Designer.cs">
+      <DependentUpon>PaymentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\VehicleMaintenance.cs">
+    <Compile Include="Forms\ReviewsControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\VehicleMaintenance.Designer.cs">
-      <DependentUpon>VehicleMaintenance.cs</DependentUpon>
+    <Compile Include="Forms\ReviewsControl.Designer.cs">
+      <DependentUpon>ReviewsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VehicleMaintenanceControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VehicleMaintenanceControl.Designer.cs">
+      <DependentUpon>VehicleMaintenanceControl.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentalsForm.cs" />
-    <Compile Include="RentalsForm.Designer.cs" />
+    <Compile Include="RentalsControl.cs" />
+    <Compile Include="RentalsControl.Designer.cs" />
     <Compile Include="VehicleForm.cs" />
     <Compile Include="VehicleForm.Designer.cs" />
     <Compile Include="VehicleRentalForm.cs" />
     <Compile Include="VehicleRentalForm.Designer.cs" />
-    <EmbeddedResource Include="Forms\CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PaymentForm.resx">
-      <DependentUpon>PaymentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CustomerControl.resx">
+      <DependentUpon>CustomerControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VehicleMaintenance.resx">
-      <DependentUpon>VehicleMaintenance.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PaymentControl.resx">
+      <DependentUpon>PaymentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VehicleMaintenanceControl.resx">
+      <DependentUpon>VehicleMaintenanceControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

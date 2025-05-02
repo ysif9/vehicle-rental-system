@@ -1,5 +1,5 @@
-﻿// dah el Maintenance form, law 3ayez tbd2 b el form dah awel ma el app yft7, ro7 3ala Program.cs w khally Application.Run(new MaintenanceForm());
-// law 3ayez tft7 el EmployeeForm awel haga, bas 3adelha le Application.Run(new EmployeeForm());
+﻿// dah el Maintenance form, law 3ayez tbd2 b el form dah awel ma el app yft7, ro7 3ala Program.cs w khally Application.Run(new MaintenanceControl());
+// law 3ayez tft7 el EmployeeControl awel haga, bas 3adelha le Application.Run(new EmployeeControl());
 // kol haga fel navigation mawgooda fel Program.cs, shof el comments hnak :)
 //
 
@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    public partial class MaintenanceForm : Form
+    public partial class MaintenanceControl : UserControl
     {
         // hena el controls beta3t el form, kol haga lelha textbox aw control
         // (fields are now in the designer)
         // el connection string, 3ashan n3raf nconnect el db
         
         SqlConnection connectionString = new SqlConnection(@"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
-        public MaintenanceForm()
+        public MaintenanceControl()
         {
             // hena bna3ml setup lel UI mn el designer
             InitializeComponent();

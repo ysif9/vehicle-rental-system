@@ -1,6 +1,6 @@
 namespace VehicleRentalSystem
 {
-    partial class RentalsForm
+    partial class RentalsControl
     {
         /// <summary>
         /// Required designer variable.
@@ -205,7 +205,7 @@ namespace VehicleRentalSystem
             this.delete_btn.UseVisualStyleBackColor = true;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
-            // RentalsForm
+            // RentalsControl
             // 
             this.ClientSize = new System.Drawing.Size(701, 452);
             this.Controls.Add(this.delete_btn);
@@ -215,7 +215,7 @@ namespace VehicleRentalSystem
             this.Controls.Add(this.search_tb);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rental_details);
-            this.Name = "RentalsForm";
+            this.Name = "RentalsControl";
             this.rental_details.ResumeLayout(false);
             this.rental_details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

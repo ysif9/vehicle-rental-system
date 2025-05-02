@@ -1,6 +1,6 @@
 ﻿namespace VehicleRentalSystem.Forms
 {
-    partial class ReviewForm
+    partial class ReviewsControl
     {
         /// <summary>
         /// Required designer variable.
@@ -213,7 +213,7 @@
             this.dgvReviews.Size = new System.Drawing.Size(600, 200);
             this.dgvReviews.TabIndex = 17;
             // 
-            // ReviewForm
+            // ReviewsControl
             // 
             this.ClientSize = new System.Drawing.Size(624, 481);
             this.Controls.Add(this.dgvReviews);
@@ -221,7 +221,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.groupBoxDetails);
-            this.Name = "ReviewForm";
+            this.Name = "ReviewsControl";
             this.Text = "Review Form";
             this.groupBoxDetails.ResumeLayout(false);
             this.groupBoxDetails.PerformLayout();
