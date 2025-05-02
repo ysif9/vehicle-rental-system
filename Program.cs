@@ -13,7 +13,7 @@ namespace Vehicle_Rental_System
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new VehicleForm());
+            Application.Run(new VehicleRentalForm());
         }
     }
 }
