@@ -10,6 +10,11 @@ namespace VehicleRentalSystem
         // Your connection string to SQL Server
         private readonly string connectionString = "Data Source=.;Initial Catalog=project;Integrated Security=True";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        private int? originalCarId = null;
+
+>>>>>>> Stashed changes
 =======
         private int? originalCarId = null;
 
@@ -31,7 +36,10 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             if (string.IsNullOrWhiteSpace(txtBrand.Text) ||
                 string.IsNullOrWhiteSpace(txtModelName.Text) ||
                 string.IsNullOrWhiteSpace(txtModelYear.Text) ||
@@ -46,6 +54,9 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             if (!int.TryParse(txtModelYear.Text, out int modelYear) ||
                 !int.TryParse(txtNumberOfSeats.Text, out int seats) ||
@@ -56,7 +67,10 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             int currentYear = DateTime.Now.Year;
             if (modelYear < 1950 || modelYear > currentYear)
             {
@@ -77,11 +91,15 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     string query =
                         @"INSERT INTO Vehicle (Brand, Model_Name, Model_Year, Type, Color, Number_of_Seats, License_Expiry_Date, License_Number, GarageID, Availability_Status)
@@ -89,11 +107,16 @@ namespace VehicleRentalSystem
 
                     SqlCommand cmd = new SqlCommand(query, con);
 =======
+=======
+>>>>>>> Stashed changes
                     var cmd = new SqlCommand("InsertVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
                     cmd.Parameters.AddWithValue("@Model_Name", txtModelName.Text);
@@ -125,7 +148,10 @@ namespace VehicleRentalSystem
         private void UpdateVehicle()
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             if (!int.TryParse(txtCarID.Text, out int enteredCarId))
             {
                 MessageBox.Show("CarID must be a valid number.");
@@ -160,6 +186,9 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             if (!int.TryParse(txtCarID.Text, out int carId) ||
                 !int.TryParse(txtModelYear.Text, out int modelYear) ||
@@ -171,7 +200,10 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             int currentYear = DateTime.Now.Year;
             if (modelYear < 1950 || modelYear > currentYear)
             {
@@ -192,11 +224,15 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     string query = @"UPDATE Vehicle SET 
                     Brand = @Brand,
@@ -213,12 +249,17 @@ namespace VehicleRentalSystem
 
                     SqlCommand cmd = new SqlCommand(query, con);
 =======
+=======
+>>>>>>> Stashed changes
                     var cmd = new SqlCommand("UpdateVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@CarID", carId);
                     cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
@@ -268,14 +309,20 @@ namespace VehicleRentalSystem
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     string query = "DELETE FROM Vehicle WHERE CarID = @CarID";
                     SqlCommand cmd = new SqlCommand(query, con);
 =======
+=======
+>>>>>>> Stashed changes
                     var cmd = new SqlCommand("DeleteVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@CarID", carId);
                     con.Open();
@@ -350,6 +397,11 @@ namespace VehicleRentalSystem
                     if (reader.Read())
                     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+                        txtCarID.Text = reader["CarID"].ToString();
+                        originalCarId = Convert.ToInt32(reader["CarID"]);
+>>>>>>> Stashed changes
 =======
                         txtCarID.Text = reader["CarID"].ToString();
                         originalCarId = Convert.ToInt32(reader["CarID"]);
