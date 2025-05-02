@@ -22,6 +22,10 @@
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             this.groupBoxDetails = new System.Windows.Forms.GroupBox();
@@ -210,24 +214,22 @@
             this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReviews.Location = new System.Drawing.Point(12, 270);
             this.dgvReviews.Name = "dgvReviews";
-            this.dgvReviews.Size = new System.Drawing.Size(600, 200);
+            this.dgvReviews.Size = new System.Drawing.Size(824, 200);
             this.dgvReviews.TabIndex = 17;
             // 
             // ReviewsControl
             // 
-            this.ClientSize = new System.Drawing.Size(624, 481);
             this.Controls.Add(this.dgvReviews);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.groupBoxDetails);
             this.Name = "ReviewsControl";
-            this.Text = "Review Form";
+            this.Size = new System.Drawing.Size(839, 481);
             this.groupBoxDetails.ResumeLayout(false);
             this.groupBoxDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

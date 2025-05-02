@@ -34,10 +34,10 @@ namespace VehicleRentalSystem
             tabMaintenance.Controls.Clear();
             tabMaintenance.Controls.Add(maintenanceControl);
 
-            // var garageControl = new GarageControl();
-            // garageControl.Dock = DockStyle.Fill;
-            // tabGarage.Controls.Clear();
-            // tabGarage.Controls.Add(garageControl);
+            var garageControl = new GarageControl();
+            garageControl.Dock = DockStyle.Fill;
+            tabGarage.Controls.Clear();
+            tabGarage.Controls.Add(garageControl);
 
             var vehicleControl = new VehicleControl();
             vehicleControl.Dock = DockStyle.Fill;

@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
-    partial class GarageForm
+    partial class GarageControl
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -262,7 +262,7 @@ namespace VehicleRentalSystem
             dgvAssignedEmployees.Size = new Size(900, 150);
             dgvAssignedEmployees.TabIndex = 22;
             // 
-            // GarageForm
+            // GarageControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -291,7 +291,7 @@ namespace VehicleRentalSystem
             Controls.Add(label1);
             Controls.Add(dgvGarages);
             Margin = new Padding(4, 3, 4, 3);
-            Name = "GarageForm";
+            Name = "GarageControl";
             Text = "Garage Mangagement"; // Updated to match the target image
             ((System.ComponentModel.ISupportInitialize)dgvGarages).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAssignedEmployees).EndInit();

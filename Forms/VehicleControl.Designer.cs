@@ -185,7 +185,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(783, 222);
+            this.groupBox1.Size = new System.Drawing.Size(883, 222);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehicle Details";
@@ -275,7 +275,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 261);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(783, 256);
+            this.dataGridView1.Size = new System.Drawing.Size(1171, 256);
             this.dataGridView1.TabIndex = 13;
             // 
             // btnSearch
@@ -330,7 +330,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VehicleControl";
-            this.Size = new System.Drawing.Size(866, 605);
+            this.Size = new System.Drawing.Size(1171, 605);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -60,14 +60,14 @@ namespace VehicleRentalSystem
             this.customerTab.Location = new System.Drawing.Point(0, 0);
             this.customerTab.Name = "customerTab";
             this.customerTab.SelectedIndex = 0;
-            this.customerTab.Size = new System.Drawing.Size(887, 490);
+            this.customerTab.Size = new System.Drawing.Size(1181, 555);
             this.customerTab.TabIndex = 0;
             // 
             // tabCustomer
             // 
             this.tabCustomer.Location = new System.Drawing.Point(4, 22);
             this.tabCustomer.Name = "tabCustomer";
-            this.tabCustomer.Size = new System.Drawing.Size(879, 464);
+            this.tabCustomer.Size = new System.Drawing.Size(1173, 529);
             this.tabCustomer.TabIndex = 0;
             this.tabCustomer.Text = "Customer";
             this.tabCustomer.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@ namespace VehicleRentalSystem
             // 
             this.tabRental.Location = new System.Drawing.Point(4, 22);
             this.tabRental.Name = "tabRental";
-            this.tabRental.Size = new System.Drawing.Size(879, 464);
+            this.tabRental.Size = new System.Drawing.Size(1131, 529);
             this.tabRental.TabIndex = 1;
             this.tabRental.Text = "Rental";
             this.tabRental.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@ namespace VehicleRentalSystem
             // 
             this.tabPayment.Location = new System.Drawing.Point(4, 22);
             this.tabPayment.Name = "tabPayment";
-            this.tabPayment.Size = new System.Drawing.Size(879, 464);
+            this.tabPayment.Size = new System.Drawing.Size(1131, 529);
             this.tabPayment.TabIndex = 2;
             this.tabPayment.Text = "Payment";
             this.tabPayment.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@ namespace VehicleRentalSystem
             // 
             this.tabMaintenance.Location = new System.Drawing.Point(4, 22);
             this.tabMaintenance.Name = "tabMaintenance";
-            this.tabMaintenance.Size = new System.Drawing.Size(879, 464);
+            this.tabMaintenance.Size = new System.Drawing.Size(1131, 529);
             this.tabMaintenance.TabIndex = 3;
             this.tabMaintenance.Text = "Maintenance";
             this.tabMaintenance.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@ namespace VehicleRentalSystem
             // 
             this.tabGarage.Location = new System.Drawing.Point(4, 22);
             this.tabGarage.Name = "tabGarage";
-            this.tabGarage.Size = new System.Drawing.Size(879, 464);
+            this.tabGarage.Size = new System.Drawing.Size(1131, 529);
             this.tabGarage.TabIndex = 4;
             this.tabGarage.Text = "Garage";
             this.tabGarage.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@ namespace VehicleRentalSystem
             // 
             this.tabVehicle.Location = new System.Drawing.Point(4, 22);
             this.tabVehicle.Name = "tabVehicle";
-            this.tabVehicle.Size = new System.Drawing.Size(879, 464);
+            this.tabVehicle.Size = new System.Drawing.Size(1131, 529);
             this.tabVehicle.TabIndex = 5;
             this.tabVehicle.Text = "Vehicle";
             this.tabVehicle.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@ namespace VehicleRentalSystem
             // 
             this.tabVehicle_Offered_For_Rental.Location = new System.Drawing.Point(4, 22);
             this.tabVehicle_Offered_For_Rental.Name = "tabVehicle_Offered_For_Rental";
-            this.tabVehicle_Offered_For_Rental.Size = new System.Drawing.Size(879, 464);
+            this.tabVehicle_Offered_For_Rental.Size = new System.Drawing.Size(1131, 529);
             this.tabVehicle_Offered_For_Rental.TabIndex = 6;
             this.tabVehicle_Offered_For_Rental.Text = "Vehicle Offered For Rental";
             this.tabVehicle_Offered_For_Rental.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@ namespace VehicleRentalSystem
             // 
             this.tabVehicle_Needs_Maintenance.Location = new System.Drawing.Point(4, 22);
             this.tabVehicle_Needs_Maintenance.Name = "tabVehicle_Needs_Maintenance";
-            this.tabVehicle_Needs_Maintenance.Size = new System.Drawing.Size(879, 464);
+            this.tabVehicle_Needs_Maintenance.Size = new System.Drawing.Size(1131, 529);
             this.tabVehicle_Needs_Maintenance.TabIndex = 7;
             this.tabVehicle_Needs_Maintenance.Text = "Vehicle Needs Maintenance";
             this.tabVehicle_Needs_Maintenance.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@ namespace VehicleRentalSystem
             // 
             this.tabEmployee.Location = new System.Drawing.Point(4, 22);
             this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Size = new System.Drawing.Size(879, 464);
+            this.tabEmployee.Size = new System.Drawing.Size(1131, 529);
             this.tabEmployee.TabIndex = 8;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@ namespace VehicleRentalSystem
             // 
             this.tabReviews.Location = new System.Drawing.Point(4, 22);
             this.tabReviews.Name = "tabReviews";
-            this.tabReviews.Size = new System.Drawing.Size(879, 464);
+            this.tabReviews.Size = new System.Drawing.Size(1131, 529);
             this.tabReviews.TabIndex = 10;
             this.tabReviews.Text = "Reviews";
             this.tabReviews.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@ namespace VehicleRentalSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 489);
+            this.ClientSize = new System.Drawing.Size(1180, 554);
             this.Controls.Add(this.customerTab);
             this.Name = "Dashboard";
             this.Text = "Dashboard";

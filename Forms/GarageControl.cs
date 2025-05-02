@@ -3,15 +3,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
-    public partial class GarageForm : Form
+    public partial class GarageControl : UserControl
     {
         private DataTable tbl_Garages = new DataTable();
         private DataTable tbl_AssignedEmployees = new DataTable();
         private SqlConnection con;
 
-        public GarageForm()
+        public GarageControl()
         {
             InitializeComponent();
             SetupDatabaseConnection();

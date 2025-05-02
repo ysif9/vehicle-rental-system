@@ -64,6 +64,8 @@
     <Compile Include="Forms\EmployeeControl.Designer.cs">
       <DependentUpon>EmployeeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GarageControl.cs" />
+    <Compile Include="Forms\GarageControl.Designer.cs" />
     <Compile Include="Forms\MaintenanceControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,8 +91,6 @@
     <Compile Include="Forms\VehicleMaintenanceControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GarageForm.cs" />
-    <Compile Include="GarageForm.Designer.cs" />
     <Compile Include="Forms\VehicleMaintenanceControl.Designer.cs">
       <DependentUpon>VehicleMaintenanceControl.cs</DependentUpon>
     </Compile>
@@ -105,18 +105,21 @@
     <EmbeddedResource Include="Forms\CustomerControl.resx">
       <DependentUpon>CustomerControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GarageControl.resx" />
     <EmbeddedResource Include="Forms\PaymentControl.resx">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RentalsControl.resx">
       <DependentUpon>RentalsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReviewsControl.resx">
+      <DependentUpon>ReviewsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\VehicleControl.resx" />
     <EmbeddedResource Include="Forms\VehicleMaintenanceControl.resx">
       <DependentUpon>VehicleMaintenanceControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VehicleRentalControl.resx" />
-    <EmbeddedResource Include="GarageForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

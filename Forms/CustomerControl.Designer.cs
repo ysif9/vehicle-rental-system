@@ -280,19 +280,18 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 291);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(619, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(1170, 189);
             this.dataGridView1.TabIndex = 9;
             // 
             // CustomerControl
             // 
-            this.ClientSize = new System.Drawing.Size(624, 481);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.groupBoxDetails);
             this.Name = "CustomerControl";
-            this.Text = "Customer Form";
+            this.Size = new System.Drawing.Size(703, 481);
             this.groupBoxDetails.ResumeLayout(false);
             this.groupBoxDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
