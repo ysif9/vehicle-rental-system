@@ -74,9 +74,10 @@ CREATE TABLE Garage
     Manager_Name        VARCHAR(100) NOT NULL,
     Garage_Phone_Number VARCHAR(20)  NOT NULL,
     Vehicle_Count       INT DEFAULT 0 CHECK (Vehicle_Count >= 0),
-    CONSTRAINT CHK_Phone_Format CHECK (Garage_Phone_Number LIKE
-                                       '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]' OR
-                                       Garage_Phone_Number LIKE '[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]')
+    CONSTRAINT CHK_Phone_Format CHECK (
+        Garage_Phone_Number LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' OR
+        Garage_Phone_Number LIKE '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]' OR
+        Garage_Phone_Number LIKE '[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][0-9]')
 );
 
 CREATE INDEX IDX_Garage_Name ON Garage (Garage_Name);
@@ -93,12 +94,15 @@ CREATE TABLE Vehicle
     Color               VARCHAR(30)  NOT NULL,
     Availability_Status VARCHAR(10)  NOT NULL,
     Number_of_Seats     INT          NOT NULL,
-    License_Number      VARCHAR(5)   NOT NULL,
+    License_Number      VARCHAR(6)   NOT NULL,
     License_Expiry_Date DATE         NOT NULL,
     GarageID            INT          NOT NULL,
     CONSTRAINT CHK_Vehicle_CarID_Positive CHECK (CarID > 0),
     CONSTRAINT CHK_Vehicle_ModelYear_Valid CHECK (Model_Year BETWEEN 1950 AND YEAR(GETDATE())),
-    CONSTRAINT CHK_Vehicle_LicenseNumber_Format CHECK (License_Number LIKE '[0-9][0-9][0-9][0-9][0-9]'),
+    CONSTRAINT CHK_Vehicle_LicenseNumber_Format CHECK (
+        License_Number LIKE '[A-Z][A-Z][A-Z][0-9][0-9][0-9]' AND
+        LEN(License_Number) = 6
+        ),
     CONSTRAINT CHK_Vehicle_Status_Valid CHECK (
         Availability_Status IN ('yes', 'no', 'Yes', 'No', 'YES', 'NO')
         ),
@@ -205,7 +209,7 @@ VALUES (500.00, 'AutoFix Cairo', '2025-04-15'),
 
 -- GARAGE
 INSERT INTO Garage (Garage_Name, Address, City, State, Manager_Name, Garage_Phone_Number, Vehicle_Count)
-VALUES ('Downtown Garage', '123 Main St', 'Cairo', 'Cairo', 'Jane Smith', '01012345678', 15),
+VALUES ('Downtown Garage', '123 Main St', 'Cairo', 'Cairo', 'Jane Smith', '01012345672', 15),
        ('Westside Garage', '456 Oak Ave', 'Giza', 'Giza', 'John Doe', '01198765432', 10);
 
 -- VEHICLE
@@ -214,8 +218,8 @@ INSERT INTO Vehicle (Brand, Type, Model_Name, Model_Year, Color, Availability_St
 VALUES ('Honda', 'Sedan', 'Civic', 2021, 'Red', 'yes', 5, 'ABC123', '2026-12-31', 1),
        ('Toyota', 'SUV', 'Corolla', 2022, 'Blue', 'no', 7, 'XYZ789', '2027-08-15', 2),
        ('BMW', 'Coupe', 'M4', 2020, 'Black', 'yes', 4, 'BMW987', '2025-11-25', 1),
-       ('Ford', 'Truck', 'F-150', 2019, 'White', 'yes', 2, 'F15001', '2026-03-01', 2),
-       ('Chevrolet', 'Sedan', 'Malibu', 2023, 'Silver', 'no', 5, 'CHEV123', '2027-06-10', 1);
+       ('Ford', 'Truck', 'F-150', 2019, 'White', 'yes', 2, 'FRE001', '2026-03-01', 2),
+       ('Chevrolet', 'Sedan', 'Malibu', 2023, 'Silver', 'no', 5, 'CHE123', '2027-06-10', 1);
 
 
 -- VEHICLE_MAINTENANCE
