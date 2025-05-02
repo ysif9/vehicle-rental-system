@@ -1,4 +1,7 @@
-﻿namespace VehicleRentalSystem
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace VehicleRentalSystem
 {
     partial class GarageForm
     {

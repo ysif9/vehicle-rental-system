@@ -9,7 +9,7 @@ namespace VehicleRentalSystem
     {
         private DataTable tbl_Garages = new DataTable();
         private DataTable tbl_AssignedEmployees = new DataTable();
-        private SqlConnection? con;
+        private SqlConnection con;
 
         public GarageForm()
         {
@@ -27,7 +27,7 @@ namespace VehicleRentalSystem
             try
             {
                 con = new SqlConnection(
-                    @"Data Source=DESKTOP-GB7L41Q\MSSQLSERVERR;Initial Catalog=Vehicle Rental System;Integrated Security=True");
+                    @"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
             }
             catch (Exception ex)
             {

@@ -20,7 +20,7 @@ namespace VehicleRentalSystem
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VehicleRentalForm());
+            Application.Run(new GarageForm());
         }
     }
 }
