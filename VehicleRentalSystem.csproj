@@ -76,27 +76,27 @@
     <Compile Include="Forms\PaymentControl.Designer.cs">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RentalsControl.cs" />
+    <Compile Include="Forms\RentalsControl.Designer.cs" />
     <Compile Include="Forms\ReviewsControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ReviewsControl.Designer.cs">
       <DependentUpon>ReviewsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VehicleControl.cs" />
+    <Compile Include="Forms\VehicleControl.Designer.cs" />
     <Compile Include="Forms\VehicleMaintenanceControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\VehicleMaintenanceControl.Designer.cs">
       <DependentUpon>VehicleMaintenanceControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VehicleRentalControl.cs" />
+    <Compile Include="Forms\VehicleRentalControl.Designer.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentalsControl.cs" />
-    <Compile Include="RentalsControl.Designer.cs" />
-    <Compile Include="VehicleControl.cs" />
-    <Compile Include="VehicleControl.Designer.cs" />
-    <Compile Include="VehicleRentalControl.cs" />
-    <Compile Include="VehicleRentalControl.Designer.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,9 +106,14 @@
     <EmbeddedResource Include="Forms\PaymentControl.resx">
       <DependentUpon>PaymentControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentalsControl.resx">
+      <DependentUpon>RentalsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VehicleControl.resx" />
     <EmbeddedResource Include="Forms\VehicleMaintenanceControl.resx">
       <DependentUpon>VehicleMaintenanceControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VehicleRentalControl.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,11 +123,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RentalsControl.resx">
-      <DependentUpon>RentalsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleControl.resx" />
-    <EmbeddedResource Include="VehicleRentalControl.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -164,23 +164,23 @@
     <Content Include="Procedures\paymentsProcedures\GetAllPayments.sql" />
     <Content Include="Procedures\paymentsProcedures\InsertPayment.sql" />
     <Content Include="Procedures\paymentsProcedures\UpdatePayment.sql" />
+    <Content Include="Procedures\RentalProcedures\DeleteRental.sql" />
+    <Content Include="Procedures\RentalProcedures\InsertRental.sql" />
+    <Content Include="Procedures\RentalProcedures\UpdateRental.sql" />
     <Content Include="Procedures\ReviewProcedures\DeleteReview.sql" />
     <Content Include="Procedures\ReviewProcedures\InsertReview.sql" />
     <Content Include="Procedures\ReviewProcedures\UpdateReview.sql" />
     <Content Include="Procedures\VehicleMaintananceProcedures\DeleteVehicleNeedsMaintenance.sql" />
     <Content Include="Procedures\VehicleMaintananceProcedures\InsertVehicleNeedsMaintenance.sql" />
     <Content Include="Procedures\VehicleMaintananceProcedures\UpdateVehicleNeedsMaintenance.sql" />
+    <Content Include="Procedures\VehicleProcedures\DeleteVehicle.sql" />
+    <Content Include="Procedures\VehicleProcedures\InsertVehicle.sql" />
+    <Content Include="Procedures\VehicleProcedures\UpdateVehicle.sql" />
+    <Content Include="Procedures\VehicleRentalProcedures\DeleteVehicleRental.sql" />
+    <Content Include="Procedures\VehicleRentalProcedures\InsertVehicleRental.sql" />
+    <Content Include="Procedures\VehicleRentalProcedures\UpdateVehicleRental.sql" />
     <Content Include="README.md" />
-    <Content Include="RentalProcedures\DeleteRental.sql" />
-    <Content Include="RentalProcedures\InsertRental.sql" />
-    <Content Include="RentalProcedures\UpdateRental.sql" />
     <Content Include="TestProcedures.sql" />
-    <Content Include="VehicleProcedures\DeleteVehicle.sql" />
-    <Content Include="VehicleProcedures\InsertVehicle.sql" />
-    <Content Include="VehicleProcedures\UpdateVehicle.sql" />
-    <Content Include="VehicleRentalProcedures\DeleteVehicleRental.sql" />
-    <Content Include="VehicleRentalProcedures\InsertVehicleRental.sql" />
-    <Content Include="VehicleRentalProcedures\UpdateVehicleRental.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Procedures\" />

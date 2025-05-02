@@ -1,4 +1,4 @@
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
     partial class RentalsControl
     {
