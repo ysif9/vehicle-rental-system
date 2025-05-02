@@ -1,7 +1,7 @@
 ﻿-- CUSTOMER
 CREATE TABLE Customer
 (
-    CustomerID             INT IDENTITY (1,1) PRIMARY KEY,
+    CustomerID             INT PRIMARY KEY,
     Customer_Name          VARCHAR(100),
     Address                VARCHAR(255),
     Date_of_Birth          DATE,
@@ -63,7 +63,7 @@ CREATE TABLE Garage
 -- VEHICLE
 CREATE TABLE Vehicle
 (
-    CarID               INT IDENTITY (1,1) PRIMARY KEY,
+    CarID               INT IDENTITY(1,1) PRIMARY KEY,
     Brand               VARCHAR(50),
     Type                VARCHAR(50),
     Model_Name          VARCHAR(100),
@@ -110,16 +110,6 @@ CREATE TABLE Employee
     Enrollment_Date DATE
 );
 
--- EMPLOYEE_GARAGE (N:M)
-CREATE TABLE Employee_Works_For_Garage
-(
-    EmployeeID INT,
-    GarageID   INT,
-    PRIMARY KEY (EmployeeID, GarageID),
-    FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
-    FOREIGN KEY (GarageID) REFERENCES Garage (GarageID)
-);
-
 -- REVIEWS
 CREATE TABLE Reviews
 (
@@ -132,4 +122,14 @@ CREATE TABLE Reviews
     Check_Report  varchar(max),
     FOREIGN KEY (RentalID) REFERENCES Rental (RentalID),
     FOREIGN KEY (Checked_By) REFERENCES Employee (EmployeeID)
+);
+
+-- EMPLOYEE_GARAGE (N:M)
+CREATE TABLE Employee_Works_For_Garage
+(
+    EmployeeID INT,
+    GarageID   INT,
+    PRIMARY KEY (EmployeeID, GarageID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
+    FOREIGN KEY (GarageID) REFERENCES Garage (GarageID)
 );

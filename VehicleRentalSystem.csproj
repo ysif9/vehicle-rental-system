@@ -54,6 +54,10 @@
         </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="VehicleForm.cs" />
+        <Compile Include="VehicleForm.Designer.cs" />
+        <Compile Include="VehicleRentalForm.cs" />
+        <Compile Include="VehicleRentalForm.Designer.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +70,8 @@
         <EmbeddedResource Include="RentalsForm.resx">
           <DependentUpon>RentalsForm.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="VehicleForm.resx" />
+        <EmbeddedResource Include="VehicleRentalForm.resx" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,10 +86,17 @@
         <None Include="App.config"/>
     </ItemGroup>
     <ItemGroup>
+      <Content Include=".gitignore" />
       <Content Include="database.sql" />
       <Content Include="RentalProcedures\DeleteRental.sql" />
       <Content Include="RentalProcedures\InsertRental.sql" />
       <Content Include="RentalProcedures\UpdateRental.sql" />
+      <Content Include="VehicleProcedures\DeleteVehicle.sql" />
+      <Content Include="VehicleProcedures\InsertVehicle.sql" />
+      <Content Include="VehicleProcedures\UpdateVehicle.sql" />
+      <Content Include="VehicleRentalProcedures\DeleteVehicleRental.sql" />
+      <Content Include="VehicleRentalProcedures\InsertVehicleRental.sql" />
+      <Content Include="VehicleRentalProcedures\UpdateVehicleRental.sql" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>
