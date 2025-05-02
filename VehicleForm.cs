@@ -9,26 +9,8 @@ namespace VehicleRentalSystem
     {
         // Your connection string to SQL Server
         private readonly string connectionString = "Data Source=.;Initial Catalog=project;Integrated Security=True";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
         private int? originalCarId = null;
 
->>>>>>> Stashed changes
-=======
-        private int? originalCarId = null;
-
->>>>>>> Stashed changes
-=======
-        private int? originalCarId = null;
-
->>>>>>> Stashed changes
-=======
-        private int? originalCarId = null;
-
->>>>>>> Stashed changes
 
         public VehicleForm()
         {
@@ -45,17 +27,6 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             if (string.IsNullOrWhiteSpace(txtBrand.Text) ||
                 string.IsNullOrWhiteSpace(txtModelName.Text) ||
                 string.IsNullOrWhiteSpace(txtModelYear.Text) ||
@@ -70,16 +41,6 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             if (!int.TryParse(txtModelYear.Text, out int modelYear) ||
                 !int.TryParse(txtNumberOfSeats.Text, out int seats) ||
                 !int.TryParse(txtGarageID.Text, out int garageId))
@@ -88,17 +49,6 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             int currentYear = DateTime.Now.Year;
             if (modelYear < 1950 || modelYear > currentYear)
             {
@@ -119,51 +69,15 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                    string query =
-                        @"INSERT INTO Vehicle (Brand, Model_Name, Model_Year, Type, Color, Number_of_Seats, License_Expiry_Date, License_Number, GarageID, Availability_Status)
-                         VALUES (@Brand, @Model_Name, @Model_Year, @Type, @Color, @Number_of_Seats, @License_Expiry_Date, @License_Number, @GarageID, @Availability_Status)";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     var cmd = new SqlCommand("InsertVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
                     cmd.Parameters.AddWithValue("@Model_Name", txtModelName.Text);
                     cmd.Parameters.AddWithValue("@Model_Year", modelYear);
@@ -193,17 +107,6 @@ namespace VehicleRentalSystem
         // UPDATE vehicle
         private void UpdateVehicle()
         {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             if (!int.TryParse(txtCarID.Text, out int enteredCarId))
             {
                 MessageBox.Show("CarID must be a valid number.");
@@ -238,16 +141,6 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             if (!int.TryParse(txtCarID.Text, out int carId) ||
                 !int.TryParse(txtModelYear.Text, out int modelYear) ||
                 !int.TryParse(txtNumberOfSeats.Text, out int seats) ||
@@ -257,17 +150,6 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             int currentYear = DateTime.Now.Year;
             if (modelYear < 1950 || modelYear > currentYear)
             {
@@ -288,61 +170,16 @@ namespace VehicleRentalSystem
                 return;
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                    string query = @"UPDATE Vehicle SET 
-                    Brand = @Brand,
-                    Model_Name = @Model_Name,
-                    Model_Year = @Model_Year,
-                    Type = @Type,   
-                    Color = @Color,
-                    Number_of_Seats = @Number_of_Seats,
-                    License_Expiry_Date = @License_Expiry_Date,
-                    License_Number = @License_Number,
-                    GarageID = @GarageID,
-                    Availability_Status = @Availability_Status
-                    WHERE CarID = @CarID";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     var cmd = new SqlCommand("UpdateVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@CarID", carId);
                     cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
                     cmd.Parameters.AddWithValue("@Model_Name", txtModelName.Text);
@@ -390,34 +227,11 @@ namespace VehicleRentalSystem
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                    string query = "DELETE FROM Vehicle WHERE CarID = @CarID";
-                    SqlCommand cmd = new SqlCommand(query, con);
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     var cmd = new SqlCommand("DeleteVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@CarID", carId);
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -490,26 +304,8 @@ namespace VehicleRentalSystem
 
                     if (reader.Read())
                     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
                         txtCarID.Text = reader["CarID"].ToString();
                         originalCarId = Convert.ToInt32(reader["CarID"]);
->>>>>>> Stashed changes
-=======
-                        txtCarID.Text = reader["CarID"].ToString();
-                        originalCarId = Convert.ToInt32(reader["CarID"]);
->>>>>>> Stashed changes
-=======
-                        txtCarID.Text = reader["CarID"].ToString();
-                        originalCarId = Convert.ToInt32(reader["CarID"]);
->>>>>>> Stashed changes
-=======
-                        txtCarID.Text = reader["CarID"].ToString();
-                        originalCarId = Convert.ToInt32(reader["CarID"]);
->>>>>>> Stashed changes
                         txtBrand.Text = reader["Brand"].ToString();
                         txtModelName.Text = reader["Model_Name"].ToString();
                         txtModelYear.Text = reader["Model_Year"].ToString();

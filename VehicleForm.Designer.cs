@@ -43,6 +43,7 @@ namespace VehicleRentalSystem
             label11 = new Label();
             label12 = new Label();
             groupBox1 = new GroupBox();
+            dtpLicenseExpiry = new DateTimePicker();
             txtCarID = new TextBox();
             txtLicenseNumber = new TextBox();
             txtNumberOfSeats = new TextBox();
@@ -58,8 +59,6 @@ namespace VehicleRentalSystem
             btnInsert = new Button();
             btnUpdate = new Button();
             btnDelete = new Button();
-            txtSearchBar = new TextBox();
-            dtpLicenseExpiry = new DateTimePicker();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -194,6 +193,15 @@ namespace VehicleRentalSystem
             groupBox1.TabStop = false;
             groupBox1.Text = "Vehicle Details";
             // 
+            // dtpLicenseExpiry
+            // 
+            dtpLicenseExpiry.Format = DateTimePickerFormat.Short;
+            dtpLicenseExpiry.Location = new Point(718, 41);
+            dtpLicenseExpiry.Name = "dtpLicenseExpiry";
+            dtpLicenseExpiry.Size = new Size(366, 31);
+            dtpLicenseExpiry.TabIndex = 24;
+            dtpLicenseExpiry.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
             // txtCarID
             // 
             txtCarID.Location = new Point(94, 43);
@@ -275,7 +283,7 @@ namespace VehicleRentalSystem
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(633, 358);
+            btnSearch.Location = new Point(555, 358);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(112, 34);
             btnSearch.TabIndex = 14;
@@ -285,7 +293,7 @@ namespace VehicleRentalSystem
             // 
             // btnInsert
             // 
-            btnInsert.Location = new Point(776, 358);
+            btnInsert.Location = new Point(727, 358);
             btnInsert.Name = "btnInsert";
             btnInsert.Size = new Size(112, 34);
             btnInsert.TabIndex = 15;
@@ -295,7 +303,7 @@ namespace VehicleRentalSystem
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(920, 358);
+            btnUpdate.Location = new Point(898, 358);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(112, 34);
             btnUpdate.TabIndex = 16;
@@ -313,28 +321,11 @@ namespace VehicleRentalSystem
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // txtSearchBar
-            // 
-            txtSearchBar.Location = new Point(47, 358);
-            txtSearchBar.Name = "txtSearchBar";
-            txtSearchBar.Size = new Size(580, 31);
-            txtSearchBar.TabIndex = 18;
-            // 
-            // dtpLicenseExpiry
-            // 
-            dtpLicenseExpiry.Format = DateTimePickerFormat.Short;
-            dtpLicenseExpiry.Location = new Point(718, 41);
-            dtpLicenseExpiry.Name = "dtpLicenseExpiry";
-            dtpLicenseExpiry.Size = new Size(366, 31);
-            dtpLicenseExpiry.TabIndex = 24;
-            dtpLicenseExpiry.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
             // VehicleForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1223, 792);
-            Controls.Add(txtSearchBar);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnInsert);
@@ -347,7 +338,6 @@ namespace VehicleRentalSystem
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -377,7 +367,6 @@ namespace VehicleRentalSystem
         private Button btnInsert;
         private Button btnUpdate;
         private Button btnDelete;
-        private TextBox txtSearchBar;
         private TextBox txtCarID;
         private DateTimePicker dtpLicenseExpiry;
     }
