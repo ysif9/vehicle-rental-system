@@ -2,7 +2,7 @@
 
 namespace VehicleRentalSystem.Forms
 {
-    partial class EmployeeForm
+    partial class EmployeeControl
     {
         private System.Windows.Forms.TextBox txtEmployeeID, txtName, txtRole, txtAge, txtSalary;
         private System.Windows.Forms.DateTimePicker dtEnroll;

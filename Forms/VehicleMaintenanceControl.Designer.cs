@@ -4,15 +4,13 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    partial class VehicleMaintenance
+    partial class VehicleMaintenanceControl
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private IContainer components = null;
 
-        private System.Windows.Forms.TextBox vehicleSearchTextBox;
-        private System.Windows.Forms.Button vehicleSearchButton;
         private System.Windows.Forms.Button vehicleInsertButton;
         private System.Windows.Forms.Button vehicleUpdateButton;
         private System.Windows.Forms.Button vehicleDeleteButton;
@@ -39,8 +37,6 @@ namespace VehicleRentalSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.vehicleSearchTextBox = new System.Windows.Forms.TextBox();
-            this.vehicleSearchButton = new System.Windows.Forms.Button();
             this.vehicleInsertButton = new System.Windows.Forms.Button();
             this.vehicleUpdateButton = new System.Windows.Forms.Button();
             this.vehicleDeleteButton = new System.Windows.Forms.Button();
@@ -49,28 +45,14 @@ namespace VehicleRentalSystem.Forms
             this.maintenanceTextBox = new System.Windows.Forms.TextBox();
             this.carTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // vehicleSearchTextBox
-            // 
-            this.vehicleSearchTextBox.Location = new System.Drawing.Point(33, 175);
-            this.vehicleSearchTextBox.Name = "vehicleSearchTextBox";
-            this.vehicleSearchTextBox.Size = new System.Drawing.Size(200, 20);
-            this.vehicleSearchTextBox.TabIndex = 1;
-            // 
-            // vehicleSearchButton
-            // 
-            this.vehicleSearchButton.Location = new System.Drawing.Point(263, 173);
-            this.vehicleSearchButton.Name = "vehicleSearchButton";
-            this.vehicleSearchButton.Size = new System.Drawing.Size(75, 23);
-            this.vehicleSearchButton.TabIndex = 2;
-            this.vehicleSearchButton.Text = "Search";
-            this.vehicleSearchButton.UseVisualStyleBackColor = true;
             // 
             // vehicleInsertButton
             // 
-            this.vehicleInsertButton.Location = new System.Drawing.Point(359, 173);
+            this.vehicleInsertButton.Location = new System.Drawing.Point(12, 173);
             this.vehicleInsertButton.Name = "vehicleInsertButton";
             this.vehicleInsertButton.Size = new System.Drawing.Size(75, 23);
             this.vehicleInsertButton.TabIndex = 3;
@@ -80,7 +62,7 @@ namespace VehicleRentalSystem.Forms
             // 
             // vehicleUpdateButton
             // 
-            this.vehicleUpdateButton.Location = new System.Drawing.Point(462, 173);
+            this.vehicleUpdateButton.Location = new System.Drawing.Point(110, 173);
             this.vehicleUpdateButton.Name = "vehicleUpdateButton";
             this.vehicleUpdateButton.Size = new System.Drawing.Size(75, 23);
             this.vehicleUpdateButton.TabIndex = 4;
@@ -90,7 +72,7 @@ namespace VehicleRentalSystem.Forms
             // 
             // vehicleDeleteButton
             // 
-            this.vehicleDeleteButton.Location = new System.Drawing.Point(560, 173);
+            this.vehicleDeleteButton.Location = new System.Drawing.Point(204, 173);
             this.vehicleDeleteButton.Name = "vehicleDeleteButton";
             this.vehicleDeleteButton.Size = new System.Drawing.Size(75, 23);
             this.vehicleDeleteButton.TabIndex = 5;
@@ -100,7 +82,7 @@ namespace VehicleRentalSystem.Forms
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(45, 59);
+            this.label1.Location = new System.Drawing.Point(33, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 22);
             this.label1.TabIndex = 6;
@@ -108,7 +90,7 @@ namespace VehicleRentalSystem.Forms
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(45, 110);
+            this.label2.Location = new System.Drawing.Point(33, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 22);
             this.label2.TabIndex = 7;
@@ -116,14 +98,14 @@ namespace VehicleRentalSystem.Forms
             // 
             // maintenanceTextBox
             // 
-            this.maintenanceTextBox.Location = new System.Drawing.Point(204, 56);
+            this.maintenanceTextBox.Location = new System.Drawing.Point(192, 30);
             this.maintenanceTextBox.Name = "maintenanceTextBox";
             this.maintenanceTextBox.Size = new System.Drawing.Size(108, 20);
             this.maintenanceTextBox.TabIndex = 8;
             // 
             // carTextBox
             // 
-            this.carTextBox.Location = new System.Drawing.Point(204, 107);
+            this.carTextBox.Location = new System.Drawing.Point(192, 81);
             this.carTextBox.Name = "carTextBox";
             this.carTextBox.Size = new System.Drawing.Size(108, 20);
             this.carTextBox.TabIndex = 9;
@@ -136,27 +118,37 @@ namespace VehicleRentalSystem.Forms
             this.dataGridView1.Size = new System.Drawing.Size(776, 220);
             this.dataGridView1.TabIndex = 10;
             // 
-            // VehicleMaintenance
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.carTextBox);
+            this.groupBox1.Controls.Add(this.maintenanceTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(776, 141);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Vehicle Needs Maintenance";
+            // 
+            // VehicleMaintenanceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.carTextBox);
-            this.Controls.Add(this.maintenanceTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.vehicleSearchTextBox);
-            this.Controls.Add(this.vehicleSearchButton);
             this.Controls.Add(this.vehicleInsertButton);
             this.Controls.Add(this.vehicleUpdateButton);
             this.Controls.Add(this.vehicleDeleteButton);
-            this.Name = "VehicleMaintenance";
-            this.Text = "Vehicle Maintenance";
+            this.Name = "VehicleMaintenanceControl";
+            this.Size = new System.Drawing.Size(800, 450);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
+
+        private System.Windows.Forms.GroupBox groupBox1;
 
         private System.Windows.Forms.TextBox maintenanceTextBox;
         private System.Windows.Forms.TextBox carTextBox;

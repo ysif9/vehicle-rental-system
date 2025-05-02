@@ -1,6 +1,6 @@
 ﻿namespace VehicleRentalSystem.Forms
 {
-    partial class CustomerForm
+    partial class CustomerControl
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -283,7 +283,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(619, 189);
             this.dataGridView1.TabIndex = 9;
             // 
-            // CustomerForm
+            // CustomerControl
             // 
             this.ClientSize = new System.Drawing.Size(624, 481);
             this.Controls.Add(this.dataGridView1);
@@ -291,7 +291,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.groupBoxDetails);
-            this.Name = "CustomerForm";
+            this.Name = "CustomerControl";
             this.Text = "Customer Form";
             this.groupBoxDetails.ResumeLayout(false);
             this.groupBoxDetails.PerformLayout();

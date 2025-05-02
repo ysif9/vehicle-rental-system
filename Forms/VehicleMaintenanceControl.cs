@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    public partial class VehicleMaintenance : Form
+    public partial class VehicleMaintenanceControl : UserControl
     {
-        public VehicleMaintenance()
+        public VehicleMaintenanceControl()
         {
             InitializeComponent();
             Load += VehicleMaintenance_Load;
@@ -38,21 +38,6 @@ namespace VehicleRentalSystem.Forms
                 MessageBox.Show(@"Error loading data: " + ex.Message);
             }
         }
-
-        
-        // private void VehicleSearchButton_Click(object sender, EventArgs e)
-        // {
-        //     string searchText = vehicleSearchTextBox.Text.Trim();
-        //     if (!string.IsNullOrEmpty(searchText))
-        //     {
-        //         string condition = $"Make LIKE '%{searchText}%' OR Model LIKE '%{searchText}%'";
-        //         LoadTable(condition);
-        //     }
-        //     else
-        //     {
-        //         LoadTable();
-        //     }
-        // }
 
         private void vehicleInsertButton_Click(object sender, EventArgs e)
         {

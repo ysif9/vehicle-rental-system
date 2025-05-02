@@ -1,12 +1,12 @@
 ﻿using System.Windows.Forms;
 
-// This is the auto-generated designer file for MaintenanceForm.
+// This is the auto-generated designer file for MaintenanceControl.
 // Normally, Visual Studio manages this file if you use the WinForms designer.
 // If you build your UI in code, you can leave this as a placeholder.
 
 namespace VehicleRentalSystem.Forms
 {
-    partial class MaintenanceForm
+    partial class MaintenanceControl
     {
         private System.Windows.Forms.TextBox txtMaintenanceNumber, txtCompanyName, txtServicePrice;
         private System.Windows.Forms.DateTimePicker dtDate;

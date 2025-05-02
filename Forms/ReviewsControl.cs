@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    public partial class ReviewForm : Form
+    public partial class ReviewsControl : UserControl
     {
-        public ReviewForm()
+        public ReviewsControl()
         {
             InitializeComponent();
             Load += ReviewsForm_Load;

@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem.Forms
 {
-    public partial class PaymentForm : Form
+    public partial class PaymentControl : UserControl
     {
         // Modify the connection string as per your SQL Server setup
         SqlConnection conn = new SqlConnection(@"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True");
 
-        public PaymentForm()
+        public PaymentControl()
         {
             InitializeComponent();
             LoadPayments();

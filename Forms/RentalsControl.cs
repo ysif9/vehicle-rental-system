@@ -3,11 +3,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace VehicleRentalSystem
+namespace VehicleRentalSystem.Forms
 {
-    public partial class RentalsForm : Form
+    public partial class RentalsControl : UserControl
     {
-        public RentalsForm()
+        public RentalsControl()
         {
             InitializeComponent();
             Load += RentalsForm_Load;
