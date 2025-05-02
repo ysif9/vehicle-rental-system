@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vehicle_Rental_System
+namespace VehicleRentalSystem
 {
     public partial class VehicleRentalForm : Form
     {
@@ -19,9 +14,7 @@ namespace Vehicle_Rental_System
             LoadTable();
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Project;Integrated Security=True");
-        private int originalCarID = -1;
-        private int originalRentalID = -1;
+        private readonly string connectionString = @"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True";
 
         private void InsertRentalVehicle()
         {
@@ -55,6 +48,7 @@ namespace Vehicle_Rental_System
             // Insert
             try
             {
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 using (SqlCommand cmd = new SqlCommand("InsertVehicleRental", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -64,7 +58,6 @@ namespace Vehicle_Rental_System
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    conn.Close();
                     MessageBox.Show("Vehicle rental inserted successfully.");
                     LoadTable();
                 }
@@ -90,25 +83,26 @@ namespace Vehicle_Rental_System
             int.TryParse(txtRentalID.Text, out int rentalId);
 
             // Prevent editing IDs
-            if (carId != originalCarID || rentalId != originalRentalID)
-            {
-                MessageBox.Show("You are not allowed to change CarID or RentalID during update.");
-                txtCarID.Text = originalCarID.ToString();
-                txtRentalID.Text = originalRentalID.ToString();
-                return;
-            }
+            // if (carId != originalCarID || rentalId != originalRentalID)
+            // {
+            //     MessageBox.Show("You are not allowed to change CarID or RentalID during update.");
+            //     txtCarID.Text = originalCarID.ToString();
+            //     txtRentalID.Text = originalRentalID.ToString();
+            //     return;
+            // }
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE Vehicle_Offered_For_Rental SET Daily_Price = @DailyPrice WHERE CarID = @CarID AND RentalID = @RentalID", conn))
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand("UpdateVehicleRental", conn))
                 {
-                    cmd.Parameters.AddWithValue("@DailyPrice", dailyPrice);
-                    cmd.Parameters.AddWithValue("@CarID", originalCarID);
-                    cmd.Parameters.AddWithValue("@RentalID", originalRentalID);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Daily_price", dailyPrice);
+                    cmd.Parameters.AddWithValue("@CarID", carId);
+                    cmd.Parameters.AddWithValue("@RentalID", rentalId);
 
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    conn.Close();
 
                     MessageBox.Show(rowsAffected > 0 ? "Update successful." : "No matching record found.");
                     LoadTable();
@@ -124,6 +118,7 @@ namespace Vehicle_Rental_System
         {
             try
             {
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 using (SqlCommand cmd = new SqlCommand("DeleteVehicleRental", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -132,7 +127,6 @@ namespace Vehicle_Rental_System
 
                     conn.Open();
                     int rows = cmd.ExecuteNonQuery();
-                    conn.Close();
                     MessageBox.Show(rows > 0 ? "Delete successful." : "No record found to delete.");
                     LoadTable();
                 }
@@ -147,6 +141,7 @@ namespace Vehicle_Rental_System
         {
             try
             {
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Vehicle_Offered_For_Rental", conn))
                 {
                     DataTable dt = new DataTable();
@@ -169,10 +164,6 @@ namespace Vehicle_Rental_System
                 txtRentalID.Text = row.Cells["RentalID"].Value.ToString();
                 txtCarID.Text = row.Cells["CarID"].Value.ToString();
                 txtDailyPrice.Text = row.Cells["Daily_Price"].Value.ToString();
-
-                
-                originalCarID = int.Parse(txtCarID.Text);
-                originalRentalID = int.Parse(txtRentalID.Text);
             }
         }
 
@@ -201,10 +192,9 @@ namespace Vehicle_Rental_System
                     MessageBox.Show("Please enter at least CarID or RentalID to search.");
                     return;
                 }
-
-                using (SqlConnection con = new SqlConnection(conn.ConnectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddRange(parameters.ToArray());
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
