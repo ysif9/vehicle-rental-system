@@ -9,6 +9,11 @@ namespace VehicleRentalSystem
     {
         // Your connection string to SQL Server
         private readonly string connectionString = "Data Source=.;Initial Catalog=project;Integrated Security=True";
+<<<<<<< Updated upstream
+=======
+        private int? originalCarId = null;
+
+>>>>>>> Stashed changes
 
         public VehicleForm()
         {
@@ -25,6 +30,23 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+=======
+            if (string.IsNullOrWhiteSpace(txtBrand.Text) ||
+                string.IsNullOrWhiteSpace(txtModelName.Text) ||
+                string.IsNullOrWhiteSpace(txtModelYear.Text) ||
+                string.IsNullOrWhiteSpace(txtType.Text) ||
+                string.IsNullOrWhiteSpace(txtColor.Text) ||
+                string.IsNullOrWhiteSpace(txtNumberOfSeats.Text) ||
+                string.IsNullOrWhiteSpace(txtLicenseNumber.Text) ||
+                string.IsNullOrWhiteSpace(txtGarageID.Text) ||
+                string.IsNullOrWhiteSpace(txtStatus.Text))
+            {
+                MessageBox.Show("All fields must be filled.");
+                return;
+            }
+
+>>>>>>> Stashed changes
             if (!int.TryParse(txtModelYear.Text, out int modelYear) ||
                 !int.TryParse(txtNumberOfSeats.Text, out int seats) ||
                 !int.TryParse(txtGarageID.Text, out int garageId))
@@ -33,15 +55,46 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+=======
+            int currentYear = DateTime.Now.Year;
+            if (modelYear < 1950 || modelYear > currentYear)
+            {
+                MessageBox.Show($"Model year must be between 1950 and {currentYear}.");
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtLicenseNumber.Text, @"^\d{5}$"))
+            {
+                MessageBox.Show("License Number must be exactly 5 digits.");
+                return;
+            }
+
+            string status = txtStatus.Text.Trim().ToLower();
+            if (status != "yes" && status != "no")
+            {
+                MessageBox.Show("Availability Status must be either 'yes' or 'no'.");
+                return;
+            }
+
+>>>>>>> Stashed changes
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
                     string query =
                         @"INSERT INTO Vehicle (Brand, Model_Name, Model_Year, Type, Color, Number_of_Seats, License_Expiry_Date, License_Number, GarageID, Availability_Status)
                          VALUES (@Brand, @Model_Name, @Model_Year, @Type, @Color, @Number_of_Seats, @License_Expiry_Date, @License_Number, @GarageID, @Availability_Status)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
+=======
+                    var cmd = new SqlCommand("InsertVehicle", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+>>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
                     cmd.Parameters.AddWithValue("@Model_Name", txtModelName.Text);
                     cmd.Parameters.AddWithValue("@Model_Year", modelYear);
@@ -71,6 +124,43 @@ namespace VehicleRentalSystem
         // UPDATE vehicle
         private void UpdateVehicle()
         {
+<<<<<<< Updated upstream
+=======
+            if (!int.TryParse(txtCarID.Text, out int enteredCarId))
+            {
+                MessageBox.Show("CarID must be a valid number.");
+                return;
+            }
+
+            if (originalCarId == null)
+            {
+                MessageBox.Show("No vehicle loaded. Please search first.");
+                return;
+            }
+
+            if (enteredCarId != originalCarId.Value)
+            {
+                MessageBox.Show("CarID cannot be changed during update. Revert it before continuing.");
+                txtCarID.Text = originalCarId.Value.ToString(); // auto-fix it
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtCarID.Text) ||
+                string.IsNullOrWhiteSpace(txtBrand.Text) ||
+                string.IsNullOrWhiteSpace(txtModelName.Text) ||
+                string.IsNullOrWhiteSpace(txtModelYear.Text) ||
+                string.IsNullOrWhiteSpace(txtType.Text) ||
+                string.IsNullOrWhiteSpace(txtColor.Text) ||
+                string.IsNullOrWhiteSpace(txtNumberOfSeats.Text) ||
+                string.IsNullOrWhiteSpace(txtLicenseNumber.Text) ||
+                string.IsNullOrWhiteSpace(txtGarageID.Text) ||
+                string.IsNullOrWhiteSpace(txtStatus.Text))
+            {
+                MessageBox.Show("All fields must be filled.");
+                return;
+            }
+
+>>>>>>> Stashed changes
             if (!int.TryParse(txtCarID.Text, out int carId) ||
                 !int.TryParse(txtModelYear.Text, out int modelYear) ||
                 !int.TryParse(txtNumberOfSeats.Text, out int seats) ||
@@ -80,10 +170,34 @@ namespace VehicleRentalSystem
                 return;
             }
 
+<<<<<<< Updated upstream
+=======
+            int currentYear = DateTime.Now.Year;
+            if (modelYear < 1950 || modelYear > currentYear)
+            {
+                MessageBox.Show($"Model year must be between 1950 and {currentYear}.");
+                return;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtLicenseNumber.Text, @"^\d{5}$"))
+            {
+                MessageBox.Show("License Number must be exactly 5 digits.");
+                return;
+            }
+
+            string status = txtStatus.Text.Trim().ToLower();
+            if (status != "yes" && status != "no")
+            {
+                MessageBox.Show("Availability Status must be either 'yes' or 'no'.");
+                return;
+            }
+
+>>>>>>> Stashed changes
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
                     string query = @"UPDATE Vehicle SET 
                     Brand = @Brand,
                     Model_Name = @Model_Name,
@@ -98,6 +212,14 @@ namespace VehicleRentalSystem
                     WHERE CarID = @CarID";
 
                     SqlCommand cmd = new SqlCommand(query, con);
+=======
+                    var cmd = new SqlCommand("UpdateVehicle", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+
+>>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@CarID", carId);
                     cmd.Parameters.AddWithValue("@Brand", txtBrand.Text);
                     cmd.Parameters.AddWithValue("@Model_Name", txtModelName.Text);
@@ -145,8 +267,16 @@ namespace VehicleRentalSystem
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
                     string query = "DELETE FROM Vehicle WHERE CarID = @CarID";
                     SqlCommand cmd = new SqlCommand(query, con);
+=======
+                    var cmd = new SqlCommand("DeleteVehicle", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+>>>>>>> Stashed changes
                     cmd.Parameters.AddWithValue("@CarID", carId);
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -219,6 +349,11 @@ namespace VehicleRentalSystem
 
                     if (reader.Read())
                     {
+<<<<<<< Updated upstream
+=======
+                        txtCarID.Text = reader["CarID"].ToString();
+                        originalCarId = Convert.ToInt32(reader["CarID"]);
+>>>>>>> Stashed changes
                         txtBrand.Text = reader["Brand"].ToString();
                         txtModelName.Text = reader["Model_Name"].ToString();
                         txtModelYear.Text = reader["Model_Year"].ToString();
