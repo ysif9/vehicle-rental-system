@@ -16,8 +16,7 @@ namespace VehicleRentalSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VehicleMaintenance
-                ());
+            Application.Run(new CustomerForm());
         }
     }
 }

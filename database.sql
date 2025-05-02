@@ -1,7 +1,7 @@
 ﻿-- CUSTOMER
 CREATE TABLE Customer
 (
-    CustomerID             INT PRIMARY KEY,
+    CustomerID             INT IDENTITY (1,1) PRIMARY KEY,
     Customer_Name          VARCHAR(100),
     Address                VARCHAR(255),
     Date_of_Birth          DATE,
@@ -12,12 +12,12 @@ CREATE TABLE Customer
     License_Number         VARCHAR(50),
     License_Expiry_Date    DATE,
     License_Personal_Photo varchar(max)
-    );
+);
 
 -- RENTAL
 CREATE TABLE Rental
 (
-    RentalID      INT PRIMARY KEY,
+    RentalID      INT IDENTITY (1,1) PRIMARY KEY,
     Start_Date    DATE,
     End_Date      DATE,
     Rental_Status VARCHAR(50),
@@ -28,7 +28,7 @@ CREATE TABLE Rental
 -- PAYMENT
 CREATE TABLE Payment
 (
-    PaymentID      INT PRIMARY KEY,
+    PaymentID      INT IDENTITY (1,1) PRIMARY KEY,
     Total_Price    DECIMAL(10, 2),
     Payment_Status VARCHAR(50),
     Payment_Date   DATE,
@@ -41,7 +41,7 @@ CREATE TABLE Payment
 -- MAINTENANCE
 CREATE TABLE Maintenance
 (
-    Maintenance_Number INT PRIMARY KEY,
+    Maintenance_Number INT IDENTITY (1,1) PRIMARY KEY,
     Service_Price      DECIMAL(10, 2),
     Company_Name       VARCHAR(100),
     Date               DATE
@@ -50,7 +50,7 @@ CREATE TABLE Maintenance
 -- GARAGE
 CREATE TABLE Garage
 (
-    GarageID            INT PRIMARY KEY,
+    GarageID            INT IDENTITY (1,1) PRIMARY KEY,
     Garage_Name         VARCHAR(100),
     Address             VARCHAR(255),
     City                VARCHAR(100),
@@ -63,7 +63,7 @@ CREATE TABLE Garage
 -- VEHICLE
 CREATE TABLE Vehicle
 (
-    CarID               INT PRIMARY KEY,
+    CarID               INT IDENTITY (1,1) PRIMARY KEY,
     Brand               VARCHAR(50),
     Type                VARCHAR(50),
     Model_Name          VARCHAR(100),
@@ -102,7 +102,7 @@ CREATE TABLE Vehicle_Needs_Maintenance
 -- EMPLOYEE
 CREATE TABLE Employee
 (
-    EmployeeID      INT PRIMARY KEY,
+    EmployeeID      INT IDENTITY (1,1) PRIMARY KEY,
     Name            VARCHAR(100),
     Age             INT,
     Role            VARCHAR(50),
@@ -123,7 +123,7 @@ CREATE TABLE Employee_Works_For_Garage
 -- REVIEWS
 CREATE TABLE Reviews
 (
-    ReviewID      INT PRIMARY KEY,
+    ReviewID      INT IDENTITY (1,1) PRIMARY KEY,
     RentalID      INT,
     Customer_Name VARCHAR(100),
     Feedback      varchar(max),
