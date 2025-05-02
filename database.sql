@@ -96,22 +96,12 @@ CREATE TABLE Vehicle
     License_Number      VARCHAR(5)   NOT NULL,
     License_Expiry_Date DATE         NOT NULL,
     GarageID            INT          NOT NULL,
-
-    -- CONSTRAINT: Valid CarID
     CONSTRAINT CHK_Vehicle_CarID_Positive CHECK (CarID > 0),
-
-    -- CONSTRAINT: Model year between 1950 and current year
     CONSTRAINT CHK_Vehicle_ModelYear_Valid CHECK (Model_Year BETWEEN 1950 AND YEAR(GETDATE())),
-
-    -- CONSTRAINT: License number must be exactly 5 digits
     CONSTRAINT CHK_Vehicle_LicenseNumber_Format CHECK (License_Number LIKE '[0-9][0-9][0-9][0-9][0-9]'),
-
-    -- CONSTRAINT: Availability_Status must be 'yes' or 'no'
     CONSTRAINT CHK_Vehicle_Status_Valid CHECK (
         Availability_Status IN ('yes', 'no', 'Yes', 'No', 'YES', 'NO')
         ),
-
-    -- CONSTRAINT: Foreign key for GarageID (assumes a Garage table exists)
     CONSTRAINT FK_Vehicle_Garage FOREIGN KEY (GarageID) REFERENCES Garage (GarageID)
 );
 
@@ -166,13 +156,8 @@ CREATE TABLE Vehicle_Offered_For_Rental
     RentalID    INT            NOT NULL,
     CarID       INT            NOT NULL,
     Daily_Price DECIMAL(10, 2) NOT NULL,
-
-    -- Primary Key Constraint on (RentalID, CarID) to uniquely identify each offer
     CONSTRAINT PK_VehicleRental PRIMARY KEY (RentalID, CarID),
-
-    -- Constraint: Daily price must be non-negative
     CONSTRAINT CHK_VehicleRental_DailyPrice_Positive CHECK (Daily_Price >= 0),
-    -- Foreign key references (assuming Rental and Vehicle tables exist)
     CONSTRAINT FK_VehicleRental_Rental FOREIGN KEY (RentalID) REFERENCES Rental (RentalID),
     CONSTRAINT FK_VehicleRental_Car FOREIGN KEY (CarID) REFERENCES Vehicle (CarID)
 );
@@ -218,12 +203,12 @@ INSERT INTO Maintenance (Service_Price, Company_Name, Date)
 VALUES (500.00, 'AutoFix Cairo', '2025-04-15'),
        (750.00, 'FastTrack Maintenance', '2025-04-20');
 
--- GARAGE (with valid phone numbers that pass CHECK constraint)
+-- GARAGE
 INSERT INTO Garage (Garage_Name, Address, City, State, Manager_Name, Garage_Phone_Number, Vehicle_Count)
 VALUES ('Downtown Garage', '123 Main St', 'Cairo', 'Cairo', 'Jane Smith', '01012345678', 15),
        ('Westside Garage', '456 Oak Ave', 'Giza', 'Giza', 'John Doe', '01198765432', 10);
 
--- VEHICLE (must exist before referencing in maintenance)
+-- VEHICLE
 INSERT INTO Vehicle (Brand, Type, Model_Name, Model_Year, Color, Availability_Status, Number_of_Seats, License_Number,
                      License_Expiry_Date, GarageID)
 VALUES ('Honda', 'Sedan', 'Civic', 2021, 'Red', 'yes', 5, 'ABC123', '2026-12-31', 1),
@@ -233,13 +218,13 @@ VALUES ('Honda', 'Sedan', 'Civic', 2021, 'Red', 'yes', 5, 'ABC123', '2026-12-31'
        ('Chevrolet', 'Sedan', 'Malibu', 2023, 'Silver', 'no', 5, 'CHEV123', '2027-06-10', 1);
 
 
--- VEHICLE_MAINTENANCE (uses valid CarIDs)
+-- VEHICLE_MAINTENANCE
 INSERT INTO Vehicle_Needs_Maintenance (Maintenance_Number, CarID)
 VALUES (1, 1),
        (1, 2),
        (2, 1);
 
--- EMPLOYEE (with GarageID if required by FK)
+-- EMPLOYEE
 INSERT INTO Employee (Name, Age, Role, Salary, Enrollment_Date)
 VALUES ('Youssef Sami', 30, 'Mechanic', 5000.00, '2024-01-10'),
        ('Sara Mahmoud', 40, 'Reviewer', 6000.00, '2023-11-01'),
@@ -253,9 +238,8 @@ VALUES (3, 1), -- John Doe
        (4, 1), -- Jane Smith
        (5, 2), -- Mike Johnson
        (3, 2);
--- John Doe works at two garages
 
--- REVIEWS (Check employee IDs match reviewers)
+-- REVIEWS
 INSERT INTO Reviews (RentalID, Customer_Name, Feedback, Rating, Checked_By, Check_Report)
 VALUES (1, 'Ahmed Ali', 'The car was clean and in good condition.', 5, 2, 'Verified - Clean condition'),
        (2, 'Mona Youssef', 'Vehicle had minor scratches.', 3, 2, 'Verified - Reported scratches');
