@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem
 {
-    public partial class VehicleRentalForm : Form
+    public partial class VehicleRentalControl : UserControl
     {
-        public VehicleRentalForm()
+        public VehicleRentalControl()
         {
             InitializeComponent();
             LoadTable();

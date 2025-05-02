@@ -39,21 +39,6 @@ namespace VehicleRentalSystem.Forms
             }
         }
 
-        
-        // private void VehicleSearchButton_Click(object sender, EventArgs e)
-        // {
-        //     string searchText = vehicleSearchTextBox.Text.Trim();
-        //     if (!string.IsNullOrEmpty(searchText))
-        //     {
-        //         string condition = $"Make LIKE '%{searchText}%' OR Model LIKE '%{searchText}%'";
-        //         LoadTable(condition);
-        //     }
-        //     else
-        //     {
-        //         LoadTable();
-        //     }
-        // }
-
         private void vehicleInsertButton_Click(object sender, EventArgs e)
         {
             try

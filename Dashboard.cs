@@ -39,15 +39,15 @@ namespace VehicleRentalSystem
             // tabGarage.Controls.Clear();
             // tabGarage.Controls.Add(garageControl);
 
-            // var vehicleControl = new VehicleControl();
-            // vehicleControl.Dock = DockStyle.Fill;
-            // tabVehicle.Controls.Clear();
-            // tabVehicle.Controls.Add(vehicleControl);
-            //
-            // var vehicleRentalControl = new VehicleRentalControl();
-            // vehicleRentalControl.Dock = DockStyle.Fill;
-            // tabVehicle_Offered_For_Rental.Controls.Clear();
-            // tabVehicle_Offered_For_Rental.Controls.Add(vehicleRentalControl);
+            var vehicleControl = new VehicleControl();
+            vehicleControl.Dock = DockStyle.Fill;
+            tabVehicle.Controls.Clear();
+            tabVehicle.Controls.Add(vehicleControl);
+            
+            var vehicleRentalControl = new VehicleRentalControl();
+            vehicleRentalControl.Dock = DockStyle.Fill;
+            tabVehicle_Offered_For_Rental.Controls.Clear();
+            tabVehicle_Offered_For_Rental.Controls.Add(vehicleRentalControl);
 
             var vehicleMaintenanceControl = new VehicleMaintenanceControl();
             vehicleMaintenanceControl.Dock = DockStyle.Fill;

@@ -93,10 +93,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalsControl.cs" />
     <Compile Include="RentalsControl.Designer.cs" />
-    <Compile Include="VehicleForm.cs" />
-    <Compile Include="VehicleForm.Designer.cs" />
-    <Compile Include="VehicleRentalForm.cs" />
-    <Compile Include="VehicleRentalForm.Designer.cs" />
+    <Compile Include="VehicleControl.cs" />
+    <Compile Include="VehicleControl.Designer.cs" />
+    <Compile Include="VehicleRentalControl.cs" />
+    <Compile Include="VehicleRentalControl.Designer.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,8 +118,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VehicleForm.resx" />
-    <EmbeddedResource Include="VehicleRentalForm.resx" />
+    <EmbeddedResource Include="RentalsControl.resx">
+      <DependentUpon>RentalsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleControl.resx" />
+    <EmbeddedResource Include="VehicleRentalControl.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

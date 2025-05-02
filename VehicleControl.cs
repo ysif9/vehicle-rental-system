@@ -5,14 +5,14 @@ using System.Windows.Forms;
 
 namespace VehicleRentalSystem
 {
-    public partial class VehicleForm : Form
+    public partial class VehicleControl : UserControl
     {
         // Your connection string to SQL Server
         private readonly string connectionString = @"Server=LAPTOP-JF8UCNBK\MSSQLSERVER01,57870;Initial Catalog=DatabaseProject;Integrated Security=True";
         private int? originalCarId = null;
 
 
-        public VehicleForm()
+        public VehicleControl()
         {
             InitializeComponent();
             LoadVehicles();

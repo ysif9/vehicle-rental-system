@@ -40,8 +40,6 @@ namespace VehicleRentalSystem.Forms
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.lblRentalID = new System.Windows.Forms.Label();
             this.txtRentalID = new System.Windows.Forms.TextBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -145,24 +143,9 @@ namespace VehicleRentalSystem.Forms
             this.txtRentalID.Size = new System.Drawing.Size(150, 20);
             this.txtRentalID.TabIndex = 9;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(10, 150);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(200, 20);
-            this.txtSearch.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(220, 150);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
-            // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(320, 150);
+            this.btnInsert.Location = new System.Drawing.Point(10, 152);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);
             this.btnInsert.TabIndex = 3;
@@ -171,7 +154,7 @@ namespace VehicleRentalSystem.Forms
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(420, 150);
+            this.btnUpdate.Location = new System.Drawing.Point(110, 152);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 4;
@@ -180,7 +163,7 @@ namespace VehicleRentalSystem.Forms
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(520, 150);
+            this.btnDelete.Location = new System.Drawing.Point(210, 152);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 5;
@@ -199,21 +182,17 @@ namespace VehicleRentalSystem.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBoxDetails);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvPayments);
             this.Name = "PaymentControl";
-            this.Text = "Payment";
+            this.Size = new System.Drawing.Size(800, 450);
             this.groupBoxDetails.ResumeLayout(false);
             this.groupBoxDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
     }
 }

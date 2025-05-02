@@ -41,8 +41,6 @@ namespace VehicleRentalSystem
             this.start_date = new System.Windows.Forms.Label();
             this.customer_id = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.search_tb = new System.Windows.Forms.TextBox();
-            this.search_btn = new System.Windows.Forms.Button();
             this.insert_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
@@ -158,26 +156,9 @@ namespace VehicleRentalSystem
             this.dataGridView1.Size = new System.Drawing.Size(682, 218);
             this.dataGridView1.TabIndex = 1;
             // 
-            // search_tb
-            // 
-            this.search_tb.Location = new System.Drawing.Point(20, 212);
-            this.search_tb.Name = "search_tb";
-            this.search_tb.Size = new System.Drawing.Size(262, 20);
-            this.search_tb.TabIndex = 2;
-            // 
-            // search_btn
-            // 
-            this.search_btn.Location = new System.Drawing.Point(319, 210);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(78, 21);
-            this.search_btn.TabIndex = 3;
-            this.search_btn.Text = "Search";
-            this.search_btn.UseVisualStyleBackColor = true;
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
-            // 
             // insert_btn
             // 
-            this.insert_btn.Location = new System.Drawing.Point(428, 210);
+            this.insert_btn.Location = new System.Drawing.Point(29, 202);
             this.insert_btn.Name = "insert_btn";
             this.insert_btn.Size = new System.Drawing.Size(74, 22);
             this.insert_btn.TabIndex = 4;
@@ -187,7 +168,7 @@ namespace VehicleRentalSystem
             // 
             // update_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(538, 210);
+            this.update_btn.Location = new System.Drawing.Point(139, 202);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(62, 22);
             this.update_btn.TabIndex = 5;
@@ -197,7 +178,7 @@ namespace VehicleRentalSystem
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(634, 210);
+            this.delete_btn.Location = new System.Drawing.Point(235, 202);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(60, 21);
             this.delete_btn.TabIndex = 6;
@@ -207,32 +188,25 @@ namespace VehicleRentalSystem
             // 
             // RentalsControl
             // 
-            this.ClientSize = new System.Drawing.Size(701, 452);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.insert_btn);
-            this.Controls.Add(this.search_btn);
-            this.Controls.Add(this.search_tb);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.rental_details);
             this.Name = "RentalsControl";
+            this.Size = new System.Drawing.Size(701, 452);
             this.rental_details.ResumeLayout(false);
             this.rental_details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         private System.Windows.Forms.TextBox rental_id_textbox;
         private System.Windows.Forms.Label rental_id;
 
-        private System.Windows.Forms.Button search_btn;
-
         private System.Windows.Forms.Button insert_btn;
         private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Button delete_btn;
-
-        private System.Windows.Forms.TextBox search_tb;
 
         private System.Windows.Forms.TextBox customer_id_textbox;
         private System.Windows.Forms.Label customer_id;
