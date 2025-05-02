@@ -11,6 +11,11 @@ namespace VehicleRentalSystem
         private readonly string connectionString = "Data Source=.;Initial Catalog=project;Integrated Security=True";
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        private int? originalCarId = null;
+
+>>>>>>> Stashed changes
 =======
         private int? originalCarId = null;
 
@@ -37,7 +42,10 @@ namespace VehicleRentalSystem
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             if (string.IsNullOrWhiteSpace(txtBrand.Text) ||
@@ -55,6 +63,9 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -68,7 +79,10 @@ namespace VehicleRentalSystem
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             int currentYear = DateTime.Now.Year;
@@ -92,6 +106,9 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -99,6 +116,7 @@ namespace VehicleRentalSystem
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     string query =
@@ -109,12 +127,17 @@ namespace VehicleRentalSystem
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                     var cmd = new SqlCommand("InsertVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
                     };
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -149,7 +172,10 @@ namespace VehicleRentalSystem
         {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             if (!int.TryParse(txtCarID.Text, out int enteredCarId))
@@ -187,6 +213,9 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -201,7 +230,10 @@ namespace VehicleRentalSystem
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             int currentYear = DateTime.Now.Year;
@@ -225,6 +257,9 @@ namespace VehicleRentalSystem
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -232,6 +267,7 @@ namespace VehicleRentalSystem
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     string query = @"UPDATE Vehicle SET 
@@ -251,6 +287,8 @@ namespace VehicleRentalSystem
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                     var cmd = new SqlCommand("UpdateVehicle", con)
                     {
                         CommandType = CommandType.StoredProcedure
@@ -258,6 +296,9 @@ namespace VehicleRentalSystem
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -310,9 +351,12 @@ namespace VehicleRentalSystem
                 {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     string query = "DELETE FROM Vehicle WHERE CarID = @CarID";
                     SqlCommand cmd = new SqlCommand(query, con);
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                     var cmd = new SqlCommand("DeleteVehicle", con)
@@ -321,6 +365,9 @@ namespace VehicleRentalSystem
                     };
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -398,6 +445,11 @@ namespace VehicleRentalSystem
                     {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+                        txtCarID.Text = reader["CarID"].ToString();
+                        originalCarId = Convert.ToInt32(reader["CarID"]);
+>>>>>>> Stashed changes
 =======
                         txtCarID.Text = reader["CarID"].ToString();
                         originalCarId = Convert.ToInt32(reader["CarID"]);
