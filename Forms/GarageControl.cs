@@ -403,8 +403,10 @@ namespace VehicleRentalSystem.Forms
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO Employee_Works_For_Garage (EmployeeID, GarageID) VALUES (@EmployeeID, @GarageID)", con);
+                    SqlCommand cmd = new SqlCommand("AssignEmployeeToGarage", con)
+                    {
+                        CommandType = CommandType.StoredProcedure,
+                    };
                     cmd.Parameters.AddWithValue("@EmployeeID", employeeId);
                     cmd.Parameters.AddWithValue("@GarageID", garageId);
                     cmd.ExecuteNonQuery();

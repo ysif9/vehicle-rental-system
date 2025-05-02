@@ -162,6 +162,7 @@
     <Content Include="Procedures\EmployeeProcedures\GetAllEmployees.sql" />
     <Content Include="Procedures\EmployeeProcedures\InsertEmployee.sql" />
     <Content Include="Procedures\EmployeeProcedures\UpdateEmployee.sql" />
+    <Content Include="Procedures\GarageProcedures\AssignEmployeeToGarage.sql" />
     <Content Include="Procedures\MaintenanceProcedures\DeleteVehicleNeedsMaintenance.sql" />
     <Content Include="Procedures\MaintenanceProcedures\GetAllMaintenance.sql" />
     <Content Include="Procedures\MaintenanceProcedures\InsertVehicleNeedsMaintenance.sql" />
@@ -187,9 +188,6 @@
     <Content Include="Procedures\VehicleRentalProcedures\UpdateVehicleRental.sql" />
     <Content Include="README.md" />
     <Content Include="TestProcedures.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Procedures\" />
   </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>
