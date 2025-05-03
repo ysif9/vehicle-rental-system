@@ -28,7 +28,7 @@ CREATE TABLE Rental
     RentalID      INT IDENTITY (1,1) PRIMARY KEY,
     Start_Date    DATE NOT NULL,
     End_Date      DATE NOT NULL,
-    Rental_Status VARCHAR(50) CHECK (Rental_Status IN ('Pending', 'Confirmed', 'Cancelled', 'Completed')),
+    Rental_Status VARCHAR(50) CHECK (Rental_Status IN ('Pending', 'Active', 'Cancelled', 'Completed')),
     CustomerID    INT  NOT NULL,
     FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
     CONSTRAINT CHK_Rental_Period CHECK (End_Date > Start_Date)
