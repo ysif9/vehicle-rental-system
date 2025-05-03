@@ -194,7 +194,7 @@ VALUES ('Ahmed Ali', '123 Tahrir St, Cairo', '1995-06-15', 29, 'ahmed.ali@gmail.
 
 -- RENTAL
 INSERT INTO Rental (Start_Date, End_Date, Rental_Status, CustomerID)
-VALUES ('2025-05-10', '2025-05-15', 'Confirmed', 1),
+VALUES ('2025-05-10', '2025-05-15', 'Pending', 1),
        ('2025-06-01', '2025-06-05', 'Pending', 2);
 
 -- PAYMENT
